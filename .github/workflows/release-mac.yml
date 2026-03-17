@@ -33,6 +33,13 @@ jobs:
       - name: Build tusmo CLI
         run: pyinstaller --onefile tusmo.py
 
+      - name: Build VS Code extension (VSIX)
+        run: |
+          cd Extension
+          npm ci
+          npm install -g @vscode/vsce
+          vsce package --out ../tusmo-vscode.vsix
+
       - name: Collect bundle
         shell: bash
         run: |
@@ -56,7 +63,9 @@ jobs:
       - name: Upload release asset
         uses: softprops/action-gh-release@v1
         with:
-          files: tusmo-${{ matrix.triplet }}.tar.gz
+          files: |
+            tusmo-${{ matrix.triplet }}.tar.gz
+            tusmo-vscode.vsix
           tag_name: ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
