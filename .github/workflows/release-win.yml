@@ -1,0 +1,70 @@
+name: release-win
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g., v1.0.5)"
+        required: true
+
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps (MSYS2 + libgc)
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: >-
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-libgc
+
+      - name: Install zig
+        shell: powershell
+        run: choco install -y zig
+
+      - name: Install PyInstaller
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyinstaller
+
+      - name: Build tusmo CLI
+        run: pyinstaller --onefile tusmo.py
+
+      - name: Collect bundle
+        shell: bash
+        run: |
+          mkdir -p bundle/lib bundle/include bundle/bin bundle/runtime bundle/stdlib bundle/toolchain
+          cp -r runtime stdlib bundle/
+          cp dist/tusmo.exe bundle/bin/
+          cp /c/msys64/mingw64/lib/libgc.a bundle/lib/ || true
+          cp -r /c/msys64/mingw64/include/gc bundle/include/ || true
+          cp /c/ProgramData/chocolatey/lib/zig/tools/zig.exe bundle/toolchain/zig.exe
+          cat > bundle/toolchain/cc.bat <<'EOS'
+          @echo off
+          "%~dp0\zig.exe" cc %*
+          EOS
+
+      - name: Package
+        shell: bash
+        run: tar -czf tusmo-windows-x86_64.tar.gz -C bundle .
+
+      - name: Upload release asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: tusmo-windows-x86_64.tar.gz
+          tag_name: ${{ github.event.inputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
