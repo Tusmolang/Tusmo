@@ -49,7 +49,15 @@ jobs:
 
       - name: Build tusmo CLI
         shell: pwsh
-        run: pyinstaller --onefile tusmo.py
+        run: |
+          pyinstaller --onefile tusmo.py `
+            --hidden-import compiler `
+            --hidden-import compiler.frontend `
+            --hidden-import compiler.midend `
+            --hidden-import compiler.backend `
+            --add-data "compiler;compiler" `
+            --add-data "runtime;runtime" `
+            --add-data "stdlib;stdlib"
 
       - name: Build VS Code extension (VSIX)
         shell: pwsh
