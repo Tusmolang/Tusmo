@@ -1,0 +1,10 @@
+{
+  "iconDefinitions": {
+    "_tusmo_icon": {
+      "iconPath": "./icons/tusmoLogo.svg"
+    }
+  },
+  "fileExtensions": {
+    "tus": "_tusmo_icon"
+  }
+}

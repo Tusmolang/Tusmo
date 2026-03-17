@@ -1,0 +1,61 @@
+{
+  "name": "tusmo-language-support",
+  "displayName": "Tusmo Language Support",
+  "publisher": "Mubaarak Abdikadir Jaamac",
+  "description": "Syntax highlighting and icons for the Tusmo programming language.",
+  "version": "0.0.3",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tusmo",
+        "aliases": [
+          "Tusmo",
+          "tusmo"
+        ],
+        "extensions": [
+          ".tus"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/tusmoLogo.svg",
+          "dark": "./icons/tusmoLogo.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tusmo",
+        "scopeName": "source.tusmo",
+        "path": "./syntaxes/tusmo.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "Tusmo Hover",
+      "properties": {
+        "tusmo.hover.pythonPath": {
+          "type": "string",
+          "default": "",
+          "description": "Absolute path to the Python interpreter that should run tusmo_hover_server.py. Leave empty to auto-detect (.env/.venv) or fall back to python3."
+        },
+        "tusmo.hover.serverScript": {
+          "type": "string",
+          "default": "",
+          "description": "Path to tusmo_hover_server.py. Relative values resolve from the first workspace folder; leave empty to use that default."
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "onLanguage:tusmo"
+  ],
+  "main": "./serverLauncher.js",
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}
