@@ -15,8 +15,6 @@ jobs:
         include:
           - os: ubuntu-latest
             triplet: linux-x86_64
-          - os: windows-2022
-            triplet: windows-x86_64
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -25,40 +23,23 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps (Linux)
-        if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgc-dev zig
+          sudo apt-get install -y libgc-dev xz-utils curl
           python -m pip install --upgrade pip
           python -m pip install pyinstaller
 
-      - name: Install deps (Windows)
-        if: runner.os == 'Windows'
-        uses: msys2/setup-msys2@v2
-        with:
-          release: true
-          msystem: MINGW64
-          update: true
-          install: >-
-            mingw-w64-x86_64-toolchain
-            mingw-w64-x86_64-libgc
-
-      - name: Install zig (Windows)
-        if: runner.os == 'Windows'
-        shell: powershell
-        run: choco install -y zig
-
-      - name: Install PyInstaller (Windows)
-        if: runner.os == 'Windows'
+      - name: Download zig (Linux)
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install pyinstaller
+          mkdir -p zig
+          curl --retry 5 --retry-delay 5 --retry-connrefused -L https://ziglang.org/download/0.11.0/zig-linux-x86_64-0.11.0.tar.xz -o zig.tar.xz
+          tar -xf zig.tar.xz --strip-components=1 -C zig
+          echo "ZIG=$(pwd)/zig/zig" >> $GITHUB_ENV
 
       - name: Freeze tusmo CLI
         run: pyinstaller --onefile tusmo.py
 
       - name: Collect bundle (Linux)
-        if: runner.os == 'Linux'
         shell: bash
         run: |
           mkdir -p bundle/lib bundle/include bundle/bin bundle/runtime bundle/stdlib bundle/toolchain
@@ -66,24 +47,9 @@ jobs:
           cp /usr/lib/x86_64-linux-gnu/libgc.a bundle/lib/
           cp -r /usr/include/gc bundle/include/
           cp dist/tusmo bundle/bin/
-          cp "$(which zig)" bundle/toolchain/zig
+          cp "$ZIG" bundle/toolchain/zig
           printf '%s\n' '#!/usr/bin/env bash' 'exec "$(dirname "$0")/toolchain/zig" cc "$@"' > bundle/toolchain/cc
           chmod +x bundle/toolchain/cc
-
-      - name: Collect bundle (Windows)
-        if: runner.os == 'Windows'
-        shell: bash
-        run: |
-          mkdir -p bundle/lib bundle/include bundle/bin bundle/runtime bundle/stdlib bundle/toolchain
-          cp -r runtime stdlib bundle/
-          cp dist/tusmo.exe bundle/bin/
-          cp /c/msys64/mingw64/lib/libgc.a bundle/lib/ || true
-          cp -r /c/msys64/mingw64/include/gc bundle/include/ || true
-          cp /c/ProgramData/chocolatey/lib/zig/tools/zig.exe bundle/toolchain/zig.exe
-          cat > bundle/toolchain/cc.bat <<'EOS'
-          @echo off
-          "%~dp0\zig.exe" cc %*
-          EOS
 
       - name: Package
         shell: bash
