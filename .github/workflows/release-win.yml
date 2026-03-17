@@ -17,15 +17,25 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install deps (MSYS2 + libgc)
+      - name: Install deps (MSYS2 + libgc from pacman community)
         uses: msys2/setup-msys2@v2
         with:
           msystem: MINGW64
           update: true
           install: >-
             mingw-w64-x86_64-toolchain
-            mingw-w64-x86_64-libgc
+            mingw-w64-x86_64-binutils
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-make
+            mingw-w64-x86_64-pkgconf
             tar
+
+      - name: Install libgc (pacman community)
+        shell: bash
+        run: |
+          pacman -Sy --noconfirm mingw-w64-x86_64-libgc || pacman -S --noconfirm mingw-w64-x86_64-libgc || true
+          # fallback: use msys2 repo package name if different
+          pacman -S --noconfirm libgc || true
 
       - name: Install zig
         shell: powershell
@@ -47,8 +57,11 @@ jobs:
           mkdir -p bundle/lib bundle/include bundle/bin bundle/runtime bundle/stdlib bundle/toolchain
           cp -r runtime stdlib bundle/
           cp dist/tusmo.exe bundle/bin/
-          cp /c/msys64/mingw64/lib/libgc.a bundle/lib/ || true
-          cp -r /c/msys64/mingw64/include/gc bundle/include/ || true
+          # try both mingw and msys paths for libgc
+          if [ -f /mingw64/lib/libgc.a ]; then cp /mingw64/lib/libgc.a bundle/lib/; fi
+          if [ -f /mingw64/include/gc/gc.h ]; then cp -r /mingw64/include/gc bundle/include/; fi
+          if [ -f /usr/lib/libgc.a ]; then cp /usr/lib/libgc.a bundle/lib/; fi
+          if [ -d /usr/include/gc ]; then cp -r /usr/include/gc bundle/include/; fi
           cp /c/ProgramData/chocolatey/lib/zig/tools/zig.exe bundle/toolchain/zig.exe
           cat > bundle/toolchain/cc.bat <<'EOS'
           @echo off
