@@ -75,7 +75,7 @@ jobs:
           zig_path=$(which zig)
           mkdir -p bundle/lib bundle/include bundle/bin bundle/runtime bundle/stdlib bundle/toolchain
           cp -r runtime stdlib bundle/
-          cp -r dist/tusmo bundle/bin/
+          cp -r dist/tusmo/* bundle/bin/
           # try both mingw and msys paths for libgc
           if [ -f /mingw64/lib/libgc.a ]; then cp /mingw64/lib/libgc.a bundle/lib/; fi
           if [ -f /mingw64/include/gc/gc.h ]; then cp -r /mingw64/include/gc bundle/include/; fi

@@ -16,6 +16,7 @@ case "$OS/$ARCH" in
 esac
 
 TUSMO_HOME="$HOME/.tusmo"
+rm -rf "$TUSMO_HOME"
 mkdir -p "$TUSMO_HOME"
 TMP=$(mktemp -d)
 echo "Waxaa la soo dejinnaa $ASSET..."
@@ -80,4 +81,3 @@ echo -e "${CYAN}${asciiArt}${NC}"
 echo -e "${GRAY}==========================================${NC}"
 echo -e "${GREEN}      Ku soo dhawaaw Luuqada Tusmo${NC}"
 echo -e "${GRAY}==========================================${NC}"
-

@@ -58,7 +58,7 @@ jobs:
           GC_ROOT=$(brew --prefix boehmgc)
           cp "$GC_ROOT/lib/libgc.a" bundle/lib/
           cp -r "$GC_ROOT/include/gc" bundle/include/
-          cp -r dist/tusmo bundle/bin/
+          cp -r dist/tusmo/* bundle/bin/
           cp "$(which zig)" bundle/toolchain/zig
           cat > bundle/toolchain/cc <<'EOS'
           #!/usr/bin/env bash
