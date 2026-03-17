@@ -50,15 +50,20 @@ def process_imports(initial_ast_nodes, base_directory, stdlib_path="stdlib", pro
             if os.path.exists(potential_local_path):
                 found_path = potential_local_path
             else:
-                # 2. Haddii aan laga helin deegaanka, ka hubi maktabadda `library`.
-                potential_library_path = os.path.abspath(os.path.join("lib", file_to_import))
-                if os.path.exists(potential_library_path):
-                    found_path = potential_library_path
+                # 2. Haddii aan laga helin deegaanka, ka hubi maktabadda qarsoon ee .lib/ haddii ay jirto.
+                potential_hidden_lib_path = os.path.abspath(os.path.join(".lib", file_to_import))
+                if os.path.exists(potential_hidden_lib_path):
+                    found_path = potential_hidden_lib_path
                 else:
-                    # 3. Haddii aan laga helin maktabadda, ka hubi maktabadda asaasiga ah (stdlib).
-                    potential_stdlib_path = os.path.abspath(os.path.join(stdlib_path, file_to_import))
-                    if os.path.exists(potential_stdlib_path):
-                        found_path = potential_stdlib_path
+                    # 3. Ka dib, maktabadda muuqata `lib/`.
+                    potential_library_path = os.path.abspath(os.path.join("lib", file_to_import))
+                    if os.path.exists(potential_library_path):
+                        found_path = potential_library_path
+                    else:
+                        # 4. Ugu dambayn, maktabadda asaasiga ah (stdlib).
+                        potential_stdlib_path = os.path.abspath(os.path.join(stdlib_path, file_to_import))
+                        if os.path.exists(potential_stdlib_path):
+                            found_path = potential_stdlib_path
 
             # --- Cilad haddii faylka la waayo ---
             if not found_path:
