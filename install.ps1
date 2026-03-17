@@ -14,6 +14,18 @@ tar -xf "$temp\$asset" -C $temp
 Remove-Item -Recurse -Force "$tusmoHome" -ErrorAction SilentlyContinue
 New-Item -ItemType Directory -Path $tusmoHome | Out-Null
 Move-Item "$temp\*" $tusmoHome
+
+# Optional VS Code extension
+$vsix = "tusmo-vscode.vsix"
+if (Get-Command code -ErrorAction SilentlyContinue) {
+  Write-Host "La soo dejinnayo VS Code extension..."
+  $vsixPath = "$temp\$vsix"
+  try {
+    Invoke-WebRequest -Uri "https://github.com/$repo/releases/latest/download/$vsix" -OutFile $vsixPath -ErrorAction Stop
+    code --install-extension $vsixPath --force | Out-Null
+  } catch {}
+}
+
 Remove-Item -Recurse -Force $temp
 
 $binPath = "$tusmoHome\bin"

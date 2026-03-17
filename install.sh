@@ -21,6 +21,16 @@ TMP=$(mktemp -d)
 echo "La soo dejinnayo $ASSET..."
 curl -fsSL "https://github.com/$REPO/releases/latest/download/$ASSET" -o "$TMP/$ASSET"
 tar -xzf "$TMP/$ASSET" -C "$TUSMO_HOME"
+
+# Optional: install VS Code extension if VSIX asset exists and 'code' is available
+VSIX="tusmo-vscode.vsix"
+if command -v code >/dev/null 2>&1 || command -v codium >/dev/null 2>&1; then
+  echo "La soo dejinnayo VS Code extension..."
+  if curl -fsSL "https://github.com/$REPO/releases/latest/download/$VSIX" -o "$TMP/$VSIX"; then
+    CODE_BIN=$(command -v code || command -v codium)
+    "$CODE_BIN" --install-extension "$TMP/$VSIX" --force >/dev/null 2>&1 || true
+  fi
+fi
 rm -rf "$TMP"
 
 if command -v sudo >/dev/null 2>&1; then
