@@ -13,8 +13,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-13
-            triplet: macos-x86_64
           - os: macos-14
             triplet: macos-arm64
     runs-on: ${{ matrix.os }}

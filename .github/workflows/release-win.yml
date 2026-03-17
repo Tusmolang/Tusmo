@@ -9,13 +9,9 @@ on:
 
 jobs:
   build:
-    defaults:
-      run:
-        shell: bash
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
-
 
       - uses: actions/setup-python@v5
         with:
@@ -42,6 +38,7 @@ jobs:
           python -m pip install pyinstaller
 
       - name: Build tusmo CLI
+        shell: pwsh
         run: pyinstaller --onefile tusmo.py
 
       - name: Collect bundle
