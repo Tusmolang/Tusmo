@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from typing import List
 
 from compiler.frontend.parser.ast_nodes import ASTNode, FStringNode
