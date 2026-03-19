@@ -35,7 +35,12 @@
             transition: background 0.3s, color 0.3s;
         }
         
-        img.logo { width: 64px; height: 64px; }
+        img.logo { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            object-fit: cover;
+        }
         h1 { color: var(--text); margin-top: 20px; }
         a { color: var(--link); }
         
@@ -102,7 +107,6 @@
         <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
     </div>
     
-    <img src="favicon.svg" class="logo" alt="Tusmo Logo">
     <h1>Tusmo</h1>
     <p>A Somali programming language that compiles to C.</p>
     
