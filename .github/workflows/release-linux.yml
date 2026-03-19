@@ -27,7 +27,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgc-dev xz-utils curl
           python -m pip install --upgrade pip
-          python -m pip install pyinstaller ply requests
+          python -m pip install pyinstaller ply requests pygls lsprotocol
 
       - name: Download zig (Linux)
         run: |
@@ -57,6 +57,21 @@ jobs:
           npm install -g @vscode/vsce
           vsce package --out ../tusmo-vscode.vsix
 
+      - name: Build hover server (onedir)
+        run: |
+          pyinstaller --onefile LSP.py \
+            -n tusmo-hover \
+            --hidden-import compiler \
+            --hidden-import compiler.frontend \
+            --hidden-import compiler.midend \
+            --hidden-import compiler.backend \
+            --hidden-import ply.lex \
+            --hidden-import ply.yacc \
+            --hidden-import pygls \
+            --hidden-import lsprotocol \
+            --hidden-import lsprotocol.types \
+            --add-data "compiler:compiler"
+
       - name: Collect bundle (Linux)
         shell: bash
         run: |
@@ -65,6 +80,7 @@ jobs:
           cp /usr/lib/x86_64-linux-gnu/libgc.a bundle/lib/
           cp -r /usr/include/gc bundle/include/
           cp -r dist/tusmo/* bundle/bin/
+          cp dist/tusmo-hover bundle/bin/
           cp "$ZIG" bundle/toolchain/zig
           printf '%s\n' '#!/usr/bin/env bash' 'exec "$(dirname "$0")/zig" cc "$@"' > bundle/toolchain/cc
           chmod +x bundle/toolchain/cc

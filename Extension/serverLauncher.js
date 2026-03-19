@@ -8,26 +8,31 @@ function activate(context) {
     const workspaceRoot = getPrimaryWorkspaceFolder();
     const config = vscode.workspace.getConfiguration('tusmo.hover');
 
-    const pythonExecutablePath = resolvePythonExecutable(
-        config.get('pythonPath'),
-        workspaceRoot
-    );
-    const serverScriptPath = resolveServerScript(
-        config.get('serverScript'),
-        workspaceRoot,
-        context
-    );
+    const hoverBinary = resolveHoverBinary();
+    const pythonExecutablePath = hoverBinary
+        ? null
+        : resolvePythonExecutable(config.get('pythonPath'), workspaceRoot);
+    const serverScriptPath = hoverBinary
+        ? null
+        : resolveServerScript(config.get('serverScript'), workspaceRoot, context);
 
-    if (!pythonExecutablePath || !serverScriptPath) {
+    if (!hoverBinary && (!pythonExecutablePath || !serverScriptPath)) {
         return;
     }
 
-    const serverOptions = {
-        command: pythonExecutablePath,
-        args: [serverScriptPath, '--stdio'],
-        options: workspaceRoot ? { cwd: workspaceRoot } : undefined,
-        transport: TransportKind.stdio
-    };
+    const serverOptions = hoverBinary
+        ? {
+              command: hoverBinary,
+              args: ['--stdio'],
+              options: workspaceRoot ? { cwd: workspaceRoot } : undefined,
+              transport: TransportKind.stdio
+          }
+        : {
+              command: pythonExecutablePath,
+              args: [serverScriptPath, '--stdio'],
+              options: workspaceRoot ? { cwd: workspaceRoot } : undefined,
+              transport: TransportKind.stdio
+          };
 
     const clientOptions = {
         documentSelector: [{ scheme: 'file', language: 'tusmo' }],
@@ -54,6 +59,30 @@ function getPrimaryWorkspaceFolder() {
         return undefined;
     }
     return folders[0].uri.fsPath;
+}
+
+function resolveHoverBinary() {
+    const tusmoHome =
+        process.env.TUSMO_HOME || path.join(os.homedir(), '.tusmo');
+    const candidates = [
+        path.join(
+            tusmoHome,
+            'bin',
+            process.platform === 'win32' ? 'tusmo-hover.exe' : 'tusmo-hover'
+        ),
+        path.join(
+            os.homedir(),
+            '.tusmo',
+            'bin',
+            process.platform === 'win32' ? 'tusmo-hover.exe' : 'tusmo-hover'
+        )
+    ];
+    for (const candidate of candidates) {
+        if (fs.existsSync(candidate)) {
+            return candidate;
+        }
+    }
+    return null;
 }
 
 function resolvePythonExecutable(settingValue, workspaceRoot) {
