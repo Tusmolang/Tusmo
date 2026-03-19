@@ -7,13 +7,13 @@ repo_name: Tusmolang/Tusmo
 
 theme:
   name: material
-  palette: 
-    - scheme: default
-      primary: indigo
-      accent: indigo
+  palette:
     - scheme: slate
-      primary: black
+      primary: deepPurple
       accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
   favicon: favicon.svg
   logo: favicon.svg
 
@@ -22,5 +22,3 @@ markdown_extensions:
   - codehilite
   - toc:
       permalink: true
-
-# Navigation auto-generated from docs-src/
