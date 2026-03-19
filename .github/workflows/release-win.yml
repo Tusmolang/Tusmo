@@ -84,7 +84,9 @@ jobs:
             --hidden-import pygls `
             --hidden-import lsprotocol `
             --hidden-import lsprotocol.types `
-            --add-data \"compiler;compiler\"
+            --add-data "compiler;compiler" `
+            --add-data "runtime;runtime" `
+            --add-data "stdlib;stdlib"
 
       - name: Collect bundle
         shell: bash
