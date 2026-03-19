@@ -134,9 +134,9 @@ def download_libraries(all_args):
     target_dir = os.path.abspath(os.path.join(os.getcwd(), ".lib", repo))
     os.makedirs(os.path.dirname(target_dir), exist_ok=True)
 
-    print(f"\n[Tusmo] Downloading '{repo}' "
-          f"{'(latest)' if not version else f'version {version}'} "
-          f"from {repo_url}")
+    print(f"\n[Tusmo] Waxaa la soo dejinayaa '{repo}' "
+          f"{'(nooca ugu dambeeya)' if not version else f'nooca {version}'} "
+          f"ka socda {repo_url}")
 
     # Prefer git if available
     if shutil.which("git"):
@@ -148,10 +148,10 @@ def download_libraries(all_args):
                 clone_cmd += ["--branch", version]
             clone_cmd += [repo_url, target_dir]
             subprocess.run(clone_cmd, check=True, capture_output=True)
-            print("✅ Installed via git into .lib/")
+            print("✅ Waxaa lagu rakibay git gudaha .lib/")
             return
         except subprocess.CalledProcessError as e:
-            print(f"⚠️ Git clone failed: {e}. Falling back to zip download.")
+            print(f"⚠️ Git clone wuu fashilmay: {e}. Waxaa la isku dayayaa ZIP.")
 
     # Fallback: download ZIP (tag if specified, else main)
     if version:
@@ -176,10 +176,10 @@ def download_libraries(all_args):
                 if os.path.exists(target_dir):
                     shutil.rmtree(target_dir)
                 shutil.move(str(extracted_root), target_dir)
-            print("✅ Installed via zip into .lib/")
+            print("✅ Waxaa lagu rakibay ZIP gudaha .lib/")
     except Exception as e:
-        print(f"❌ Failed to download '{library_name}': {e}")
-        print(f"   Tried: {zip_url}")
+        print(f"❌ Ku guuldareystay soo dejinta '{library_name}': {e}")
+        print(f"   URL la isku dayay: {zip_url}")
 
 def update_libraries(command=None):
     pass
