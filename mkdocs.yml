@@ -1,0 +1,48 @@
+site_name: Tusmo
+site_description: A Somali programming language that compiles to C
+site_url: https://tusmolang.github.io/Tusmo/
+
+repo_url: https://github.com/Tusmolang/Tusmo
+repo_name: Tusmolang/Tusmo
+
+theme:
+  name: material
+  palette: 
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: black
+      accent: cyan
+  favicon: favicon.svg
+  logo: favicon.svg
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - getting-started.md
+      - how-it-works.md
+  - Language:
+      - variables.md
+      - strings.md
+      - arrays.md
+      - dictionaries.md
+      - conditions.md
+      - loops.md
+      - functions.md
+      - classes.md
+      - operators.md
+  - Standard Library:
+      - stdlib.md
+      - stdlib-os.md
+      - stdlib-wakhti.md
+      - stdlib-nasiib.md
+      - stdlib-xiriiriye.md
+      - stdlib-webxiriiriye.md
+      - stdlib-http.md

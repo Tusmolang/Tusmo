@@ -10,29 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://tusmolang.github.io/Tusmo/">
+        <link rel="canonical" href="https://tusmolang.github.io/Tusmo/stdlib/">
       
       
+        <link rel="prev" href="../operators/">
       
-        <link rel="next" href="getting-started/">
+      
+        <link rel="next" href="../stdlib-os/">
       
       
         
       
       
-      <link rel="icon" href="favicon.svg">
+      <link rel="icon" href="../favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Tusmo</title>
+        <title>Standard Library - Tusmo</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tusmo-documentation" class="md-skip">
+        <a href="#standard-library" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Tusmo" class="md-header__button md-logo" aria-label="Tusmo" data-md-component="logo">
+    <a href=".." title="Tusmo" class="md-header__button md-logo" aria-label="Tusmo" data-md-component="logo">
       
-  <img src="favicon.svg" alt="logo">
+  <img src="../favicon.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Standard Library
             
           </span>
         </div>
@@ -219,9 +221,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Tusmo" class="md-nav__button md-logo" aria-label="Tusmo" data-md-component="logo">
+    <a href=".." title="Tusmo" class="md-nav__button md-logo" aria-label="Tusmo" data-md-component="logo">
       
-  <img src="favicon.svg" alt="logo">
+  <img src="../favicon.svg" alt="logo">
 
     </a>
     Tusmo
@@ -245,37 +247,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -291,81 +266,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-tusmo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is Tusmo?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Start
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#language-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Language Features
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation Sections
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -424,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
+      <a href="../getting-started/" class="md-nav__link">
         
   
   
@@ -452,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="how-it-works/" class="md-nav__link">
+      <a href="../how-it-works/" class="md-nav__link">
         
   
   
@@ -534,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="variables/" class="md-nav__link">
+      <a href="../variables/" class="md-nav__link">
         
   
   
@@ -562,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="strings/" class="md-nav__link">
+      <a href="../strings/" class="md-nav__link">
         
   
   
@@ -590,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="arrays/" class="md-nav__link">
+      <a href="../arrays/" class="md-nav__link">
         
   
   
@@ -618,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dictionaries/" class="md-nav__link">
+      <a href="../dictionaries/" class="md-nav__link">
         
   
   
@@ -646,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="conditions/" class="md-nav__link">
+      <a href="../conditions/" class="md-nav__link">
         
   
   
@@ -674,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="loops/" class="md-nav__link">
+      <a href="../loops/" class="md-nav__link">
         
   
   
@@ -702,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="functions/" class="md-nav__link">
+      <a href="../functions/" class="md-nav__link">
         
   
   
@@ -730,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="classes/" class="md-nav__link">
+      <a href="../classes/" class="md-nav__link">
         
   
   
@@ -758,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operators/" class="md-nav__link">
+      <a href="../operators/" class="md-nav__link">
         
   
   
@@ -790,18 +690,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -822,7 +724,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -837,10 +739,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="stdlib/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standard Library
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -856,6 +785,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built-in Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Array Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing Modules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#library-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library Sections
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -868,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stdlib-os/" class="md-nav__link">
+      <a href="../stdlib-os/" class="md-nav__link">
         
   
   
@@ -896,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stdlib-wakhti/" class="md-nav__link">
+      <a href="../stdlib-wakhti/" class="md-nav__link">
         
   
   
@@ -924,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stdlib-nasiib/" class="md-nav__link">
+      <a href="../stdlib-nasiib/" class="md-nav__link">
         
   
   
@@ -952,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stdlib-xiriiriye/" class="md-nav__link">
+      <a href="../stdlib-xiriiriye/" class="md-nav__link">
         
   
   
@@ -980,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stdlib-webxiriiriye/" class="md-nav__link">
+      <a href="../stdlib-webxiriiriye/" class="md-nav__link">
         
   
   
@@ -1008,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="stdlib-http/" class="md-nav__link">
+      <a href="../stdlib-http/" class="md-nav__link">
         
   
   
@@ -1063,10 +1084,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-tusmo" class="md-nav__link">
+  <a href="#built-in-functions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is Tusmo?
+        Built-in Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Array Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing Modules
       
     </span>
   </a>
@@ -1074,43 +1145,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#library-sections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#language-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Language Features
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-sections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation Sections
+        Library Sections
       
     </span>
   </a>
@@ -1137,54 +1175,90 @@
   
 
 
-<h1 id="tusmo-documentation">Tusmo Documentation<a class="headerlink" href="#tusmo-documentation" title="Permanent link">&para;</a></h1>
-<p>Welcome to Tusmo, a Somali programming language!</p>
-<h2 id="what-is-tusmo">What is Tusmo?<a class="headerlink" href="#what-is-tusmo" title="Permanent link">&para;</a></h2>
-<p>Tusmo is a statically-typed programming language that compiles to C, then to a binary using Zig. It uses Somali keywords and syntax, making it accessible to Somali developers.</p>
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Install Tusmo</span>
-curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
-
-<span class="c1"># Run a Tusmo program</span>
-tusmo<span class="w"> </span>hello.tus
+<h1 id="standard-library">Standard Library<a class="headerlink" href="#standard-library" title="Permanent link">&para;</a></h1>
+<p>Tusmo comes with built-in modules in the <code>stdlib/</code> folder. These are imported using the <code>keen</code> keyword.</p>
+<h2 id="built-in-functions">Built-in Functions<a class="headerlink" href="#built-in-functions" title="Permanent link">&para;</a></h2>
+<p>These functions are available without importing:</p>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>qor(&quot;Hello!&quot;);      // Print to console
 </code></pre></div>
 
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>hello.tus  →  tusmo (parser)  →  hello.c  →  zig cc  →  hello (binary)  →  ./hello
+<h3 id="string-functions">String Functions<a class="headerlink" href="#string-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dherer(str)</code></td>
+<td>Get string length</td>
+<td><code>dherer("hello")</code> → 5</td>
+</tr>
+<tr>
+<td><code>nooc(value)</code></td>
+<td>Convert to string</td>
+<td><code>nooc(123)</code> → "123"</td>
+</tr>
+<tr>
+<td><code>eray(value)</code></td>
+<td>Convert to string</td>
+<td><code>eray(3.14)</code> → "3.14"</td>
+</tr>
+<tr>
+<td><code>tiro(value)</code></td>
+<td>Convert to integer</td>
+<td><code>tiro("42")</code> → 42</td>
+</tr>
+<tr>
+<td><code>jajab(value)</code></td>
+<td>Convert to float</td>
+<td><code>jajab("3.14")</code> → 3.14</td>
+</tr>
+<tr>
+<td><code>miyaa(value)</code></td>
+<td>Convert to boolean</td>
+<td><code>miyaa("haa")</code> → haa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array-functions">Array Functions<a class="headerlink" href="#array-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tix_cayiman(arr)</code></td>
+<td>Get array type</td>
+<td>Returns element type</td>
+</tr>
+</tbody>
+</table>
+<h2 id="importing-modules">Importing Modules<a class="headerlink" href="#importing-modules" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>keen &quot;os&quot;;
+keen &quot;wakhti&quot;;
+keen &quot;nasiib&quot;;
+keen &quot;xiriiriye&quot;;
+keen &quot;http&quot;;
 </code></pre></div>
 
-<p>Tusmo compiles <code>.tus</code> files to C code, then uses Zig (bundled) to compile to an executable.</p>
-<p>The bundled release includes everything needed - no external dependencies required.</p>
-<h2 id="language-features">Language Features<a class="headerlink" href="#language-features" title="Permanent link">&para;</a></h2>
+<h2 id="library-sections">Library Sections<a class="headerlink" href="#library-sections" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Static Typing</strong> - Variables have explicit types</li>
-<li><strong>Somali Keywords</strong> - Native Somali syntax (<code>keyd</code>, <code>haddii</code>, <code>soco</code>, etc.)</li>
-<li><strong>Object-Oriented</strong> - Classes and inheritance</li>
-<li><strong>Garbage Collection</strong> - Uses Boehm GC (bundled)</li>
-<li><strong>Built-in Standard Library</strong> - File I/O, HTTP, sockets, time, random</li>
+<li><a href="stdlib-os">OS Module</a> - File system and system operations</li>
+<li><a href="stdlib-wakhti">Wakhti Module</a> - Time and date functions</li>
+<li><a href="stdlib-nasiib">Nasiib Module</a> - Random number generation</li>
+<li><a href="stdlib-xiriiriye">Xiriiriye Module</a> - TCP socket programming</li>
+<li><a href="stdlib-webxiriiriye">WebXiriiriye Module</a> - WebSocket support</li>
+<li><a href="stdlib-http">HTTP Module</a> - HTTP server and request handling</li>
 </ul>
-<h2 id="documentation-sections">Documentation Sections<a class="headerlink" href="#documentation-sections" title="Permanent link">&para;</a></h2>
-<p><strong>Getting Started:</strong>
-- <a href="getting-started">Getting Started</a> - Installation and first program
-- <a href="how-it-works">How It Works</a> - Internal architecture and compiler pipeline</p>
-<p><strong>Language Reference:</strong>
-- <a href="variables">Variables</a> - Data types and declarations
-- <a href="strings">Strings</a> - String operations
-- <a href="arrays">Arrays</a> - Array and 2D arrays
-- <a href="dictionaries">Dictionaries</a> - Key-value pairs
-- <a href="conditions">Conditions</a> - If/else statements
-- <a href="loops">Loops</a> - While, for, foreach
-- <a href="functions">Functions</a> - Function definitions
-- <a href="classes">Classes</a> - Object-oriented programming
-- <a href="operators">Operators</a> - Arithmetic and comparisons</p>
-<p><strong>Standard Library:</strong>
-- <a href="stdlib">Standard Library</a> - Overview
-- <a href="stdlib-os">OS Module</a> - File system and system operations
-- <a href="stdlib-wakhti">Wakhti Module</a> - Time and date functions
-- <a href="stdlib-nasiib">Nasiib Module</a> - Random number generation
-- <a href="stdlib-xiriiriye">Xiriiriye Module</a> - TCP socket programming
-- <a href="stdlib-webxiriiriye">WebXiriiriye Module</a> - WebSocket support
-- <a href="stdlib-http">HTTP Module</a> - HTTP server and requests</p>
 
 
 
@@ -1234,10 +1308,10 @@ tusmo<span class="w"> </span>hello.tus
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
