@@ -1,44 +1,44 @@
-# OS Module
+# Module-ka OS
 
-The OS module provides file system and system operations.
+Module-ka OS wuxuu bixiyaa nidaamka faylka iyo hawlgallada nidaamka.
 
-## Import
+## Keenista (Import)
 
 ```tus
 keen "os";
 ```
 
-## Methods
+## Hababka (Methods)
 
 ### halkee()
 
-Get the current working directory.
+Hel directory-ga shaqada ee hadda (current working directory).
 
 ```tus
 keyd:eray cwd = os.halkee();
 qor(cwd);
 ```
 
-**Returns:** `eray` - Current directory path
+**Soo-celinta:** `eray` - Wadada directory-ga hadda
 
 ---
 
 ### u_guur(folder)
 
-Change directory.
+Beddel directory-ga.
 
 ```tus
 os.u_guur("/path/to/folder");
 ```
 
-**Parameters:**
-- `folder_kee_aadaa` (eray) - Path to change to
+**Halbeegyada:**
+- `folder` (eray) - Wadada loo guurayo
 
 ---
 
-### itus(path)
+### itus(wadada)
 
-List directory contents.
+Liis gareey waxyaabaha ku jira directory-ga.
 
 ```tus
 keyd:tix:eray files = os.itus("/path/to/folder");
@@ -47,162 +47,162 @@ soco item kasta laga helo files {
 }
 ```
 
-**Parameters:**
-- `folder_kee_ku_tusiyaa_waxa_ku_jira` (eray) - Directory path
+**Halbeegyada:**
+- `wadada` (eray) - Wadada directory-ga
 
-**Returns:** `tix:eray` - Array of file/folder names
+**Soo-celinta:** `tix:eray` - Tix ka kooban magacyada faylka/folder-ka
 
 ---
 
-### abuur_folder(path)
+### abuur_folder(wadada)
 
-Create a directory.
+Abuur directory cusub.
 
 ```tus
 os.abuur_folder("myfolder");
 ```
 
-**Parameters:**
-- `path` (eray) - Path to create
+**Halbeegyada:**
+- `wadada` (eray) - Wadada la abuurayo
 
 ---
 
-### tirtir_folder(path)
+### tirtir_folder(wadada)
 
-Remove a directory.
+Ka saar (tirtir) directory.
 
 ```tus
 os.tirtir_folder("myfolder");
 ```
 
-**Parameters:**
-- `path` (eray) - Path to remove
+**Halbeegyada:**
+- `wadada` (eray) - Wadada la tirtirayo
 
 ---
 
-### tirtir_fayl(path)
+### tirtir_fayl(wadada)
 
-Delete a file.
+Tirtir fayl.
 
 ```tus
 os.tirtir_fayl("file.txt");
 ```
 
-**Parameters:**
-- `path` (eray) - File path to delete
+**Halbeegyada:**
+- `wadada` (eray) - Wadada faylka la tirtirayo
 
 ---
 
-### majiraa(path)
+### majiraa(wadada)
 
-Check if path exists.
+Hubi haddii wadadu jirto.
 
 ```tus
 keyd:miyaa exists = os.majiraa("file.txt");
 haddii (exists) {
-    qor("File exists!");
+    qor("Faylku waa jiraa!");
 }
 ```
 
-**Parameters:**
-- `path` (eray) - Path to check
+**Halbeegyada:**
+- `wadada` (eray) - Wadada la hubinayo
 
-**Returns:** `miyaa` - haa if exists, maya otherwise
+**Soo-celinta:** `miyaa` - haa haddii uu jiro, maya haddii kale
 
 ---
 
-### fayl_miyaa(path)
+### fayl_miyaa(wadada)
 
-Check if path is a file.
+Hubi haddii uu yahay fayl jira.
 
 ```tus
 keyd:miyaa isFile = os.fayl_miyaa("file.txt");
 ```
 
-**Parameters:**
-- `path` (eray) - Path to check
+**Halbeegyada:**
+- `wadada` (eray) - Wadada la hubinayo
 
-**Returns:** `miyaa` - haa if file, maya otherwise
+**Soo-celinta:** `miyaa` - haa haddii uu yahay fayl, maya haddii kale
 
 ---
 
-### folder_miyaa(path)
+### folder_miyaa(wadada)
 
-Check if path is a directory.
+Hubi haddii uu yahay directory (folder) jira.
 
 ```tus
 keyd:miyaa isDir = os.folder_miyaa("folder");
 ```
 
-**Parameters:**
-- `path` (eray) - Path to check
+**Halbeegyada:**
+- `wadada` (eray) - Wadada la hubinayo
 
-**Returns:** `miyaa` - haa if directory, maya otherwise
+**Soo-celinta:** `miyaa` - haa haddii uu yahay folder, maya haddii kale
 
 ---
 
-### hel_deegaan(name)
+### hel_deegaan(magac)
 
-Get environment variable.
+Hel doorsoomaha deegaanka (environment variable).
 
 ```tus
 keyd:eray path = os.hel_deegaan("PATH");
 qor(path);
 ```
 
-**Parameters:**
-- `name` (eray) - Variable name
+**Halbeegyada:**
+- `magac` (eray) - Magaca doorsoomaha
 
-**Returns:** `eray` - Variable value
+**Soo-celinta:** `eray` - Qiimaha doorsoomaha
 
 ---
 
-### deji_deegaan(name, value)
+### deji_deegaan(magac, qiimo)
 
-Set environment variable.
+Deji doorsoomaha deegaanka.
 
 ```tus
 os.deji_deegaan("MY_VAR", "hello");
 ```
 
-**Parameters:**
-- `name` (eray) - Variable name
-- `value` (eray) - Variable value
+**Halbeegyada:**
+- `magac` (eray) - Magaca doorsoomaha
+- `qiimo` (eray) - Qiimaha doorsoomaha
 
 ---
 
-### fuli(command)
+### fuli(amar)
 
-Execute shell command.
+Fuli amarka shell-ka.
 
 ```tus
-keyd:tiro result = os.fuli("ls -la");
+keyd:tiro natiijo = os.fuli("ls -la");
 ```
 
-**Parameters:**
-- `command` (eray) - Shell command
+**Halbeegyada:**
+- `amar` (eray) - Amarka shell-ka
 
-**Returns:** `tiro` - Exit code
+**Soo-celinta:** `tiro` - Exit code
 
 ---
 
-### koobi(source, destination)
+### koobi(il, meel)
 
-Copy file.
+Koobiyeey fayl.
 
 ```tus
 os.koobi("source.txt", "dest.txt");
 ```
 
-**Parameters:**
-- `source` (eray) - Source file path
-- `destination` (eray) - Destination file path
+**Halbeegyada:**
+- `il` (eray) - Wadada faylka asalka ah
+- `meel` (eray) - Wadada meesha loo koobiyeynayo
 
 ---
 
-### nuqul(source, destination)
+### nuqul(il, meel)
 
-Alias for `koobi` - copy file.
+Waa la mid koobi - koobiyeey fayl.
 
 ```tus
 os.nuqul("source.txt", "dest.txt");
@@ -210,82 +210,82 @@ os.nuqul("source.txt", "dest.txt");
 
 ---
 
-### u_dhaqaaji(old_path, new_path)
+### u_dhaqaaji(wadadii_hore, wadada_cusub)
 
-Move or rename file/folder.
+Dhaqaaji ama dib u magacow faylka/folder-ka.
 
 ```tus
 os.u_dhaqaaji("old.txt", "new.txt");
 ```
 
-**Parameters:**
-- `old_path` (eray) - Current path
-- `new_path` (eray) - New path
+**Halbeegyada:**
+- `wadadii_hore` (eray) - Wadada hadda
+- `wadada_cusub` (eray) - Wadada cusub
 
 ---
 
-### aqri_fayl(path)
+### aqri_fayl(wadada)
 
-Read file contents.
+Akhri nuxurka faylka.
 
 ```tus
 keyd:eray content = os.aqri_fayl("file.txt");
 qor(content);
 ```
 
-**Parameters:**
-- `path` (eray) - File path
+**Halbeegyada:**
+- `wadada` (eray) - Wadada faylka
 
-**Returns:** `eray` - File contents
+**Soo-celinta:** `eray` - Nuxurka faylka
 
 ---
 
-### qor_fayl(path, content, append)
+### qor_fayl(wadada, nuxur, ku_dar)
 
-Write to file.
+Wax ku qor faylka.
 
 ```tus
-// Write (overwrite)
+// Qor (dib u qor)
 os.qor_fayl("file.txt", "Hello", maya);
 
-// Append
+// Ku dar (append)
 os.qor_fayl("file.txt", " World", haa);
 ```
 
-**Parameters:**
-- `path` (eray) - File path
-- `content` (eray) - Content to write
-- `append` (miyaa) - haa to append, maya to overwrite
+**Halbeegyada:**
+- `wadada` (eray) - Wadada faylka
+- `nuxur` (eray) - Waxa la qorayo
+- `ku_dar` (miyaa) - haa haddii aad ku darayso, maya haddii aad dib u qorayso
 
 ---
 
-### isku_dar_waddo(part1, part2)
+### isku_dar_waddo(qayb1, qayb2)
 
-Join path parts.
+Isku dar qaybaha wadada.
 
 ```tus
 keyd:eray full = os.isku_dar_waddo("folder", "file.txt");
 qor(full);  // "folder/file.txt"
 ```
 
-**Parameters:**
-- `part1` (eray) - First path part
-- `part2` (eray) - Second path part
+**Halbeegyada:**
+- `qayb1` (eray) - Qaybta koowaad ee wadada
+- `qayb2` (eray) - Qaybta labaad ee wadada
 
-**Returns:** `eray` - Joined path
+**Soo-celinta:** `eray` - Wadada isku dhafan
 
 ---
 
-### cabbir_fayl(path)
+### cabbir_fayl(wadada)
 
-Get file size in bytes.
+Hel baaxadda faylka oo byte ah.
 
 ```tus
 keyd:tiro size = os.cabbir_fayl("file.txt");
-qor("File size: " + nooc(size));
+qor("Baaxadda faylka: " + nooc(size));
 ```
 
-**Parameters:**
-- `path` (eray) - File path
+**Halbeegyada:**
+- `wadada` (eray) - Wadada faylka
 
-**Returns:** `tiro` - File size in bytes
+**Soo-celinta:** `tiro` - Baaxadda faylka oo byte ah

@@ -1,144 +1,144 @@
-# WebXiriiriye Module
+# Module-ka WebXiriiriye
 
-The WebXiriiriye module provides WebSocket support for real-time bidirectional communication.
+Module-ka WebXiriiriye wuxuu bixiyaa taageerada WebSocket ee xiriirka labada dhinac ee wakhtiga dhabta ah.
 
-## Import
+## Keenista (Import)
 
 ```tus
 keen "webxiriiriye";
 ```
 
-## Create WebSocket
+## Samee WebSocket
 
 ```tus
 keyd:WebXiriiriye ws = WebXiriiriye() cusub;
 ```
 
-## Methods
+## Hababka (Methods)
 
 ### kor_u_qaad(socket_handle, ws_key)
 
-Upgrade HTTP connection to WebSocket.
+U dallacsii xiriirka HTTP una beddel WebSocket.
 
 ```tus
-keyd:eray ws_key = "dGhlIHNhbXBsZSBncmF2aXR5";  // From HTTP request header
+keyd:eray ws_key = "dGhlIHNhbXBsZSBncmF2aXR5";  // Ka yimid HTTP request header
 ws.kor_u_qaad(client_socket_handle, ws_key);
 ```
 
-**Parameters:**
-- `client_socket_handle` (eray) - Client socket handle from HTTP server
-- `ws_key` (eray) - Sec-WebSocket-Key from HTTP request header
+**Halbeegyada:**
+- `client_socket_handle` (eray) - Macmiilka socket handle-kiisa oo ka yimid server-ka HTTP
+- `ws_key` (eray) - Sec-WebSocket-Key oo ka yimid HTTP request header
 
 ---
 
-### dir_qoraal(message)
+### dir_qoraal(fariin)
 
-Send text message.
+Dir fariin qoraal ah.
 
 ```tus
 keyd:tiro sent = ws.dir_qoraal("Hello!");
-qor("Sent bytes: ");
+qor("Bytes la diray: ");
 qor(sent);
 ```
 
-**Parameters:**
-- `fariin` (eray) - Message text
+**Halbeegyada:**
+- `fariin` (eray) - Qoraalka fariinta
 
-**Returns:** `tiro` - Bytes sent, or -1 on error
+**Soo-celinta:** `tiro` - Bytes-ka la diray, ama -1 haddii uu qalad dhaco
 
 ---
 
-### dir_binary(data)
+### dir_binary(xog)
 
-Send binary data.
+Dir xog binary ah.
 
 ```tus
 keyd:tiro sent = ws.dir_binary("\x00\x01\x02");
 ```
 
-**Parameters:**
-- `xog` (eray) - Binary data
+**Halbeegyada:**
+- `xog` (eray) - Xogta binary-ga ah
 
-**Returns:** `tiro` - Bytes sent, or -1 on error
+**Soo-celinta:** `tiro` - Bytes-ka la diray, ama -1 haddii uu qalad dhaco
 
 ---
 
 ### soo_hel_fariin()
 
-Receive WebSocket message.
+Hel fariinta WebSocket.
 
 ```tus
 keyd:qaamuus msg = ws.soo_hel_fariin();
 haddii (msg["xaalad"] == "guul") {
     haddii (msg["nooc"] == "qoraal") {
-        qor("Text: ");
+        qor("Qoraal: ");
         qor(msg["xog"]);
     } ama_haddii (msg["nooc"] == "binary") {
-        qor("Binary received");
+        qor("Binary la helay");
     } ama_haddii (msg["nooc"] == "xir") {
-        qor("Connection closed");
+        qor("Xiriirka waa la xiray");
     }
 }
 ```
 
-**Returns:** `qaamuus` - Message object with:
-- `xaalad`: "guul" or "qalad"
-- `nooc`: "qoraal", "binary", "ping", "pong", or "xir"
-- `xog`: Message content
+**Soo-celinta:** `qaamuus` - Shayga fariinta oo leh:
+- `xaalad`: "guul" ama "qalad"
+- `nooc`: "qoraal", "binary", "ping", "pong", ama "xir"
+- `xog`: Nuxurka fariinta
 
 ---
 
 ### dir_ping()
 
-Send ping frame.
+Dir frame-ka ping.
 
 ```tus
-keyd:tiro result = ws.dir_ping();
+keyd:tiro natiijo = ws.dir_ping();
 ```
 
-**Returns:** `tiro` - 0 on success, -1 on error
+**Soo-celinta:** `tiro` - 0 haddii lagu guuleysto, -1 haddii kale
 
 ---
 
 ### dir_pong()
 
-Send pong frame.
+Dir frame-ka pong.
 
 ```tus
-keyd:tiro result = ws.dir_pong();
+keyd:tiro natiijo = ws.dir_pong();
 ```
 
-**Returns:** `tiro` - 0 on success, -1 on error
+**Soo-celinta:** `tiro` - 0 haddii lagu guuleysto, -1 haddii kale
 
 ---
 
-### xir(code, reason)
+### xir(cod, sabab)
 
-Close WebSocket connection.
+Xir xiriirka WebSocket.
 
 ```tus
-ws.xir(1000, "Normal shutdown");
+ws.xir(1000, "Xiritaan caadi ah");
 ```
 
-**Parameters:**
-- `cod` (tiro) - Close code (1000 = normal close)
-- `sabab` (eray) - Close reason
+**Halbeegyada:**
+- `cod` (tiro) - Code-ka xiritaanka (1000 = xiritaan caadi ah)
+- `sabab` (eray) - Sababta xiritaanka
 
 ---
 
 ### ma_xiran()
 
-Check if WebSocket is connected.
+Hubi haddii WebSocket uu xiriirsan yahay.
 
 ```tus
 haddii (ws.ma_xiran()) {
-    qor("Connected!");
+    qor("Waa xiriirsan yahay!");
 }
 ```
 
-**Returns:** `miyaa` - haa if connected, maya otherwise
+**Soo-celinta:** `miyaa` - haa haddii uu xiriirsan yahay, maya haddii kale
 
-## Example: WebSocket Server
+## Tusaale: Server WebSocket
 
 ```tus
 keen "xiriiriye";
@@ -149,32 +149,32 @@ keyd:Xiriiriye server = Xiriiriye() cusub;
 keyd:eray handle = server.samee_server("8080");
 
 haddii (handle == "") {
-    qor("Server failed!");
+    qor("Server-ku waa fashilmay!");
     server.xir();
 }
 
 server.dhageyso(5);
-qor("WebSocket server on port 8080");
+qor("WebSocket server-ku wuxuu ku jiraa port 8080");
 
 keyd:eray client = server.aqbal();
 haddii (client == "") {
-    qor("No client");
+    qor("Macmiil ma jiro");
 } haddii_kale {
-    // Get WebSocket key from HTTP request
+    // Hel WebSocket key ka yimid codsiga HTTP
     keyd:eray ws_key = http.fariin_weyn(client, "Sec-WebSocket-Key");
     
     keyd:WebXiriiriye ws = WebXiriiriye() cusub;
     ws.kor_u_qaad(client, ws_key);
     
-    qor("WebSocket connected!");
+    qor("WebSocket waa xiriiray!");
     
-    // Echo messages
+    // Echo fariimaha
     keyd:qaamuus msg = ws.soo_hel_fariin();
     haddii (msg["xaalad"] == "guul" iyo msg["nooc"] == "qoraal") {
-        ws.dir_qoraal(msg["xog"]);  // Echo back
+        ws.dir_qoraal(msg["xog"]);  // Dib u soo celi
     }
     
-    ws.xir(1000, "Done");
+    ws.xir(1000, "Waa dhammaaday");
 }
 
 server.xir();

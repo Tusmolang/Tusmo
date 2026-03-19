@@ -1,149 +1,149 @@
-# Wakhti Module
+# Module-ka Wakhti
 
-The Wakhti module provides time and date functions.
+Module-ka Wakhti wuxuu bixiyaa hawlaha wakhtiga iyo taariikhda.
 
-## Import
+## keenista (Import)
 
 ```tus
 keen "wakhti";
 ```
 
-## Methods
+## Hababka (Methods)
 
 ### hadda()
 
-Get current Unix timestamp.
+Hel timestamp-ka hadda jooga.
 
 ```tus
-keyd:jajab now = wakhti.hadda();
+keyd:jajab hadda = wakhti.hadda();
 qor("Timestamp: ");
-qor(now);
+qor(hadda);
 ```
 
-**Returns:** `jajab` - Unix timestamp (seconds since epoch)
+**Soo-celinta:** `jajab` - Unix timestamp (ilbiriqsiyo tan iyo epoch)
 
 ---
 
 ### qaab(format)
 
-Format current time.
+Qaabee wakhtiga hadda jooga.
 
 ```tus
-keyd:eray formatted = wakhti.qaab("%Y-%m-%d %H:%M:%S");
-qor(formatted);  // e.g., "2024-01-15 10:30:45"
+keyd:eray qaabaysan = wakhti.qaab("%Y-%m-%d %H:%M:%S");
+qor(qaabaysan);  // tusaale, "2024-01-15 10:30:45"
 ```
 
-**Parameters:**
-- `format` (eray) - Format string
+**Halbeegyada:**
+- `format` (eray) - Erayga qaabaynta
 
-**Format specifiers:**
-| Code | Description |
+**Xarfaha qaabaynta (Format specifiers):**
+| Code | Sharaxaad |
 |------|-------------|
-| `%Y` | Year (4 digits) |
-| `%m` | Month (01-12) |
-| `%d` | Day (01-31) |
-| `%H` | Hour (00-23) |
-| `%M` | Minute (00-59) |
-| `%S` | Second (00-59) |
+| `%Y` | Sanadka (4 god) |
+| `%m` | Bisha (01-12) |
+| `%d` | Maalinta (01-31) |
+| `%H` | Saacadda (00-23) |
+| `%M` | Daqiiqadda (00-59) |
+| `%S` | Ilbiriqsiga (00-59) |
 
-**Returns:** `eray` - Formatted time string
+**Soo-celinta:** `eray` - Erayga wakhtiga oo qaabaysan
 
 ---
 
 ### sekeno()
 
-Get current seconds (0-59).
+Hel ilbiriqsiyada hadda (0-59).
 
 ```tus
 keyd:tiro sec = wakhti.sekeno();
-qor("Seconds: ");
+qor("Ilbiriqsiyo: ");
 qor(sec);
 ```
 
-**Returns:** `tiro` - Seconds (0-59)
+**Soo-celinta:** `tiro` - Ilbiriqsiyo (0-59)
 
 ---
 
 ### daqiiqado()
 
-Get current minutes (0-59).
+Hel daqiiqadaha hadda (0-59).
 
 ```tus
 keyd:tiro min = wakhti.daqiiqado();
-qor("Minutes: ");
+qor("Daqiiqado: ");
 qor(min);
 ```
 
-**Returns:** `tiro` - Minutes (0-59)
+**Soo-celinta:** `tiro` - Daqiiqado (0-59)
 
 ---
 
 ### saacado()
 
-Get current hours (0-23).
+Hel saacadaha hadda (0-23).
 
 ```tus
 keyd:tiro hr = wakhti.saacado();
-qor("Hour: ");
+qor("Saacad: ");
 qor(hr);
 ```
 
-**Returns:** `tiro` - Hours (0-23)
+**Soo-celinta:** `tiro` - Saacadood (0-23)
 
 ---
 
 ### maalin()
 
-Get current day of month (1-31).
+Hel maalinta bisha ee hadda (1-31).
 
 ```tus
 keyd:tiro day = wakhti.maalin();
-qor("Day: ");
+qor("Maalin: ");
 qor(day);
 ```
 
-**Returns:** `tiro` - Day (1-31)
+**Soo-celinta:** `tiro` - Maalin (1-31)
 
 ---
 
 ### bil()
 
-Get current month (1-12).
+Hel bisha hadda (1-12).
 
 ```tus
 keyd:tiro month = wakhti.bil();
-qor("Month: ");
+qor("Bil: ");
 qor(month);
 ```
 
-**Returns:** `tiro` - Month (1-12)
+**Soo-celinta:** `tiro` - Bil (1-12)
 
 ---
 
 ### sanad()
 
-Get current year.
+Hel sanadka hadda.
 
 ```tus
 keyd:tiro year = wakhti.sanad();
-qor("Year: ");
+qor("Sanad: ");
 qor(year);
 ```
 
-**Returns:** `tiro` - Full year
+**Soo-celinta:** `tiro` - Sanadka oo buuxa
 
-## Example
+## Tusaale
 
 ```tus
 keen "wakhti";
 
-qor("Current time:");
-qor("Hour: " + nooc(wakhti.saacado()));
-qor("Minute: " + nooc(wakhti.daqiiqado()));
-qor("Second: " + nooc(wakhti.sekeno()));
+qor("Wakhtiga hadda:");
+qor("Saacad: " + nooc(wakhti.saacado()));
+qor("Daqiiqad: " + nooc(wakhti.daqiiqado()));
+qor("Ilbiriqsi: " + nooc(wakhti.sekeno()));
 
-qor("Date:");
-qor("Day: " + nooc(wakhti.maalin()));
-qor("Month: " + nooc(wakhti.bil()));
-qor("Year: " + nooc(wakhti.sanad()));
+qor("Taariikhda:");
+qor("Maalin: " + nooc(wakhti.maalin()));
+qor("Bil: " + nooc(wakhti.bil()));
+qor("Sanad: " + nooc(wakhti.sanad()));
 ```

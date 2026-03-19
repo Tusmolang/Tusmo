@@ -1,29 +1,29 @@
-# Operators
+# Hawl-wadeennada (Operators)
 
-Tusmo supports various operators for arithmetic, comparison, and boolean operations.
+Tusmo waxay taageertaa hawl-wadeenno kala duwan oo loogu talagalay xisaabta, isbarbardhigga, iyo hawlgallada boolean-ka.
 
-## Arithmetic Operators
+## Hawl-wadeennada Xisaabta (Arithmetic Operators)
 
 ```tus
 keyd:tiro a = 10;
 keyd:tiro b = 3;
 
-qor(a + b);   // Addition: 13
-qor(a - b);   // Subtraction: 7
-qor(a * b);   // Multiplication: 30
-qor(a / b);   // Division: 3
-qor(a % b);   // Modulus: 1
+qor(a + b);   // Isku-dar: 13
+qor(a - b);   // Kala-goyn: 7
+qor(a * b);   // Isku-dhufasho: 30
+qor(a / b);   // Qaybin: 3
+qor(a % b);   // Saami (Modulus): 1
 ```
 
-## Increment/Decrement
+## Kordhinta/Yareynta (Increment/Decrement)
 
 ```tus
 keyd:tiro x = 0;
-x = x + 1;    // Increment
-x = x - 1;    // Decrement
+x = x + 1;    // Kordhin
+x = x - 1;    // Yareyn
 ```
 
-## Assignment Operators
+## Hawl-wadeennada Meel-dhigga (Assignment Operators)
 
 ```tus
 keyd:tiro y = 0;
@@ -32,21 +32,21 @@ y = y - 2;
 y = y * 2;
 ```
 
-## Comparison Operators
+## Hawl-wadeennada Isbarbardhigga (Comparison Operators)
 
 ```tus
 keyd:tiro p = 5;
 keyd:tiro q = 10;
 
-qor(p == q);  // Equal: maya
-qor(p != q);  // Not equal: haa
-qor(p < q);   // Less than: haa
-qor(p > q);   // Greater than: maya
-qor(p <= q);  // Less or equal: haa
-qor(p >= q);  // Greater or equal: maya
+qor(p == q);  // La mid ah: maya
+qor(p != q);  // Aan la mid ahayn: haa
+qor(p < q);   // Ka yar: haa
+qor(p > q);   // Ka weyn: maya
+qor(p <= q);  // Ka yar ama la mid ah: haa
+qor(p >= q);  // Ka weyn ama la mid ah: maya
 ```
 
-Float comparison:
+Isbarbardhigga Float:
 
 ```tus
 keyd:jajab f1 = 3.14;
@@ -54,9 +54,9 @@ keyd:jajab f2 = 2.5;
 qor(f1 > f2);  // haa
 ```
 
-## Boolean Operators
+## Hawl-wadeennada Boolean (Boolean Operators)
 
-| Operator | Keyword | Description |
+| Hawl-wadeen | Keyword | Sharaxaad |
 |----------|---------|-------------|
 | `&&` | `iyo` | And |
 | `||` | `ama` | Or |
@@ -65,8 +65,8 @@ qor(f1 > f2);  // haa
 keyd:miyaa ha = haa;
 keyd:miyaa maya = maya;
 
-qor(ha iyo maya);  // And: maya
-qor(ha ama maya);   // Or: haa
+qor(ha iyo maya);  // Iyo (And): maya
+qor(ha ama maya);   // Ama (Or): haa
 ```
 
 ## Ternary Operator
@@ -74,12 +74,12 @@ qor(ha ama maya);   // Or: haa
 ```tus
 keyd:tiro num = 5;
 keyd:miyaa isBig = num > 10;
-keyd:eray result = isBig ? "big" : "small";
+keyd:eray result = isBig ? "weyn" : "yar";
 ```
 
-## Operator Precedence
+## Kala-horreynta Hawl-wadeennada (Operator Precedence)
 
 ```tus
-keyd:tiro prec = 2 + 3 * 4;    // 14 (multiplication first)
-prec = (2 + 3) * 4;            // 20 (parentheses first)
+keyd:tiro prec = 2 + 3 * 4;    // 14 (isku-dhufashada ayaa horreysa)
+prec = (2 + 3) * 4;            // 20 (parentheses ayaa horreeya)
 ```

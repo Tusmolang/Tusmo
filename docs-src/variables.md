@@ -1,28 +1,28 @@
-# Variables
+# Varaibles
 
-Tusmo is a statically-typed language with explicit type declarations.
+Tusmo waa luqad statically-typed ah oo leh noocyo si cad loo sheego.
 
-## Declaration Syntax
+## Syntax-ka Sheegista
 
 ```tus
-keyd:<type> <name>;
-keyd:<type> <name> = <value>;
+keyd:<nooca> <magaca>;
+keyd:<nooca> <magaca> = <qiimaha>;
 ```
 
-## Data Types
+## Noocyada Xogta
 
-| Type | Description | Example |
-|------|-------------|---------|
+| Nooca | Sharaxaad | Tusaale |
+|-------|-----------|---------|
 | `tiro` | Integer | `10`, `-5`, `42` |
 | `jajab` | Float | `3.14`, `-2.5` |
 | `eray` | String | `"Hello"` |
 | `xaraf` | Character | `'A'`, `'B'` |
-| `miyaa` | Boolean | `haa` (yes), `maya` (no) |
-| `tix:<type>` | Array | `[1, 2, 3]` |
-| `qaamuus` | Dictionary | `{"key": "value"}` |
-| `waxbo` | Void/null | No value |
+| `miyaa` | Boolean | `haa` (haa), `maya` (maya) |
+| `tix:<nooca>` | Array | `[1, 2, 3]` |
+| `qaamuus` | Dictionary | `{"fure": "qiimo"}` |
+| `waxbo` | Void/null | Qiimo ma leh |
 
-## Examples
+## Tusaalooyin
 
 ### Integer (tiro)
 
@@ -42,8 +42,8 @@ keyd:jajab x = 2.5 * 4.2;
 ### String (eray)
 
 ```tus
-keyd:eray name = "Hello";
-keyd:eray greeting = name + " World";
+keyd:eray magac = "Hello";
+keyd:eray salaam = magac + " World";
 ```
 
 ### Character (xaraf)
@@ -64,37 +64,37 @@ keyd:miyaa flag3 = a > 5;
 ### Array (tix)
 
 ```tus
-keyd:tix:tiro nums = [1, 2, 3, 4, 5];
-keyd:tix:eray words = ["aa", "bb", "cc"];
-keyd:tix:tiro empty = [];
+keyd:tix:tiro tirooyin = [1, 2, 3, 4, 5];
+keyd:tix:eray erayo = ["aa", "bb", "cc"];
+keyd:tix:tiro eber = [];
 ```
 
 ### Dictionary (qaamuus)
 
 ```tus
-keyd:qaamuus person = {"magac": "Ali", "da": 25};
-keyd:qaamuus emptyDict;
+keyd:qaamuus qof = {"magac": "Ali", "da": 25};
+keyd:qaamuus qaamuusEber;
 ```
 
 ### Void (waxbo)
 
 ```tus
-keyd:waxbo nothing;
+keyd:waxbo waxba;
 ```
 
 ## F-Strings
 
-Use `$"{}"` for string interpolation:
+U isticmaal `$"{}"` isku-dhafka erayada:
 
 ```tus
-keyd:eray name = "Tusmo";
-keyd:tiro age = 5;
-qor($"Name is {name}, Age is {age}");
+keyd:eray magac = "Tusmo";
+keyd:tiro da'da = 5;
+qor($"Magacu waa {magac}, Da'du waa {da'da}");
 ```
 
 ## Ternary Operator
 
 ```tus
 keyd:miyaa cond = a > 5;
-keyd:eray result = cond ? "big" : "small";
+keyd:eray natiijo = cond ? "weyn" : "yar";
 ```

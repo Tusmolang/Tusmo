@@ -1,35 +1,35 @@
-# Standard Library
+# Maktabadda Caadiga ah (Standard Library)
 
-Tusmo comes with built-in modules in the `stdlib/` folder. These are imported using the `keen` keyword.
+Tusmo waxay la timaadaa modules ku dhex dhisan oo ku jira folder-ka `stdlib/`. Kuwan waxaa lagu soo dejiyaa iyadoo la isticmaalayo keyword-ka `keen`.
 
-## Built-in Functions
+## Hawlaha ku dhex dhisan (Built-in Functions)
 
-These functions are available without importing:
+Hawlahani waxay diyaar yihiin iyadoon waxba la soo dejin:
 
-### Output
+### Soo-saarka (Output)
 
 ```tus
-qor("Hello!");      // Print to console
+qor("Hello!");      // Ku daabac console-ka
 ```
 
-### String Functions
+### Hawlaha Erayada (String Functions)
 
-| Function | Description | Example |
+| Hawsha | Sharaxaad | Tusaale |
 |----------|-------------|---------|
-| `dherer(str)` | Get string length | `dherer("hello")` → 5 |
-| `nooc(value)` | Convert to string | `nooc(123)` → "123" |
-| `eray(value)` | Convert to string | `eray(3.14)` → "3.14" |
-| `tiro(value)` | Convert to integer | `tiro("42")` → 42 |
-| `jajab(value)` | Convert to float | `jajab("3.14")` → 3.14 |
-| `miyaa(value)` | Convert to boolean | `miyaa("haa")` → haa |
+| `dherer(str)` | Hel dhererka erayga | `dherer("hello")` → 5 |
+| `nooc(value)` | Hel nooca xogta | `nooc(123)` → "tiro" |
+| `eray(value)` | U beddel eray | `eray(3.14)` → "3.14" |
+| `tiro(value)` | U beddel integer | `tiro("42")` → 42 |
+| `jajab(value)` | U beddel float | `jajab("3.14")` → 3.14 |
+| `miyaa(value)` | U beddel boolean | `miyaa("haa")` → haa |
 
-### Array Functions
+### Hawlaha Tixda (Array Functions)
 
-| Function | Description | Example |
+| Hawsha | Sharaxaad | Tusaale |
 |----------|-------------|---------|
-| `tix_cayiman(arr)` | Get array type | Returns element type |
+| `tix_cayiman(arr)` | Hel nooca tixda | Waxay soo celisaa nooca xubinta |
 
-## Importing Modules
+## Soo-dejinta Modules-ka (Importing Modules)
 
 ```tus
 keen "os";
@@ -39,11 +39,11 @@ keen "xiriiriye";
 keen "http";
 ```
 
-## Library Sections
+## Qaybaha Maktabadda
 
-- [OS Module](stdlib-os) - File system and system operations
-- [Wakhti Module](stdlib-wakhti) - Time and date functions
-- [Nasiib Module](stdlib-nasiib) - Random number generation
-- [Xiriiriye Module](stdlib-xiriiriye) - TCP socket programming
-- [WebXiriiriye Module](stdlib-webxiriiriye) - WebSocket support
-- [HTTP Module](stdlib-http) - HTTP server and request handling
+- [Module-ka OS](stdlib-os.md) - Nidaamka faylka iyo hawlgallada nidaamka
+- [Module-ka Wakhti](stdlib-wakhti.md) - Hawlaha wakhtiga iyo taariikhda
+- [Module-ka Nasiib](stdlib-nasiib.md) - Soo saarista lambarrada nasiibka ah (random)
+- [Module-ka Xiriiriye](stdlib-xiriiriye.md) - Barnaamijka TCP socket
+- [Module-ka WebXiriiriye](stdlib-webxiriiriye.md) - Taageerada WebSocket
+- [Module-ka HTTP](stdlib-http.md) - HTTP server iyo maareynta codsiyada

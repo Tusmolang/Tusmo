@@ -1,73 +1,57 @@
-# Dictionaries
+# Qaamuusyada (Dictionaries)
 
-Dictionaries in Tusmo use `qaamuus` type for key-value pairs.
+Qaamuusyada Tusmo waxay u isticmaalaan nooca `qaamuus` lammaanaha fure-iyo-qiimo (key-value pairs).
 
-## Declaration
+## Sheegista
 
 ```tus
-keyd:qaamuus emptyDict;
-keyd:qaamuus person = {"magac": "Ali", "da": 25};
+keyd:qaamuus qaamuusEber;
+keyd:qaamuus qof = {"magac": "Ali", "da": 25};
 ```
 
-## Access Values
+## Helidda Qiimayaasha
 
 ```tus
-qor(person["magac"]);  // "Ali"
-qor(person["da"]);     // 25
+qor(qof["magac"]);  // "Ali"
+qor(qof["da"]);     // 25
 ```
 
-## Modify Values
+## Beddelidda Qiimayaasha
 
 ```tus
-person["da"] = 26;
+qof["da"] = 26;
 ```
 
-## Add New Keys
+## Ku-daridda Furayaal Cusub
 
 ```tus
-person["phone"] = "612345678";
+qof["telefoon"] = "612345678";
 ```
 
-## Nested Dictionaries
+## Qaamuusyada Is-dhex-jira
 
 ```tus
-keyd:qaamuus nested = {
-    "user": {
-        "username": "admin",
+keyd:qaamuus is_dhex_jira = {
+    "isticmaale": {
+        "magac": "admin",
         "email": "admin@test.com"
     }
 };
 
-qor(nested["user"]["username"]);
+qor(is_dhex_jira["isticmaale"]["magac"]);
 ```
 
-## Different Value Types
+## Noocyo Qiimo oo Kala Duwan
 
 ```tus
-keyd:qaamuus mixed = {
-    "name": "Test",
-    "age": 20,
-    "score": 95.5,
-    "active": haa
+keyd:qaamuus isku_dhaf = {
+    "magac": "Tijaabo",
+    "da": 20,
+    "dhibco": 95.5,
+    "shaqaynaya": haa
 };
 ```
 
-## Arrays in Dictionaries
 
-```tus
-keyd:qaamuus scores = {
-    "math": [90, 85, 88],
-    "science": [95, 92]
-};
 
-qor(scores["math"]);
-```
 
-## Dictionary of Dictionaries
-
-```tus
-keyd:qaamuus students = {
-    "ali": {"grade": "A", "score": 95},
-    "sara": {"grade": "B", "score": 88}
-};
-```

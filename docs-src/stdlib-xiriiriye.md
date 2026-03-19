@@ -1,132 +1,132 @@
-# Xiriiriye Module
+# Module-ka Xiriiriye
 
-The Xiriiriye module provides low-level socket programming for TCP connections.
+Module-ka Xiriiriye wuxuu bixiyaa barnaamijka socket-ka ee heerka hoose ee xiriirka TCP.
 
-## Import
+## Soo-dejinta (Import)
 
 ```tus
 keen "xiriiriye";
 ```
 
-## Create Socket
+## Samee Socket
 
 ```tus
 keyd:Xiriiriye socket = Xiriiriye() cusub;
 ```
 
-## Methods
+## Hababka (Methods)
 
 ### samee_server(port)
 
-Create a server socket listening on a port.
+Abuur socket server oo ka dhageysanaya port cayiman.
 
 ```tus
 keyd:eray handle = socket.samee_server("8080");
 haddii (handle == "") {
-    qor("Failed to create server!");
+    qor("Fashil ku yimid abuurista server-ka!");
 } haddii_kale {
-    qor("Server created!");
+    qor("Server-ka waa la abuuray!");
 }
 ```
 
-**Parameters:**
-- `port` (eray) - Port number as string (e.g., "8080")
+**Halbeegyada:**
+- `port` (eray) - Lambarka port-ka oo eray ah (tusaale, "8080")
 
-**Returns:** `eray` - Socket handle (empty string on failure)
+**Soo-celinta:** `eray` - Socket handle (eray madhan haddii uu fashilmo)
 
 ---
 
-### dhageyso(max_clients)
+### dhageyso(ugu_badan_macmiil)
 
-Start listening for connections.
+Billow dhageysiga xiriirada.
 
 ```tus
-keyd:tiro result = socket.dhageyso(5);
-haddii (result == 0) {
-    qor("Listening...");
+keyd:tiro natiijo = socket.dhageyso(5);
+haddii (natiijo == 0) {
+    qor("Dhageysanaya...");
 }
 ```
 
-**Parameters:**
-- `saf_sugid_ugu_badan` (tiro) - Maximum queue length (typically 5-10)
+**Halbeegyada:**
+- `ugu_badan_macmiil` (tiro) - Dhererka ugu badan ee safka sugitaanka (badanaa 5-10)
 
-**Returns:** `tiro` - 0 on success, -1 on failure
+**Soo-celinta:** `tiro` - 0 haddii lagu guuleysto, -1 haddii kale
 
 ---
 
 ### aqbal()
 
-Accept incoming client connection.
+Aqbal xiriirka macmiilka ee soo socda.
 
 ```tus
 keyd:eray client_handle = socket.aqbal();
 haddii (client_handle == "") {
-    qor("No client connected");
+    qor("Macmiil ma xiriirsana");
 } haddii_kale {
-    qor("Client connected!");
+    qor("Macmiil waa soo xiriiray!");
 }
 ```
 
-**Returns:** `eray` - Client handle (empty string if no connection)
+**Soo-celinta:** `eray` - Macmiilka handle-kiisa (eray madhan haddii uusan jirin xiriir)
 
 ---
 
 ### kuxirmo(host, port)
 
-Connect to a remote server as client.
+Ku xirmo server fog sidii macmiil (client).
 
 ```tus
 keyd:eray handle = socket.kuxirmo("example.com", "80");
 haddii (handle == "") {
-    qor("Connection failed!");
+    qor("Xiriirku waa fashilmay!");
 }
 ```
 
-**Parameters:**
-- `host` (eray) - Hostname or IP (e.g., "example.com", "127.0.0.1")
-- `port` (eray) - Port as string (e.g., "80")
+**Halbeegyada:**
+- `host` (eray) - Magaca host-ka ama IP (tusaale, "example.com", "127.0.0.1")
+- `port` (eray) - Port-ka oo eray ah (tusaale, "80")
 
-**Returns:** `eray` - Socket handle (empty string on failure)
+**Soo-celinta:** `eray` - Socket handle (eray madhan haddii uu fashilmo)
 
 ---
 
-### dir(data)
+### dir(xogta)
 
-Send data over socket.
+Xog ku dir socket-ka.
 
 ```tus
 keyd:tiro bytes_sent = socket.dir("Hello Server!");
-qor("Sent bytes: ");
+qor("Bytes la diray: ");
 qor(bytes_sent);
 ```
 
-**Parameters:**
-- `xogta` (eray) - Data to send
+**Halbeegyada:**
+- `xogta` (eray) - Xogta la dirayo
 
-**Returns:** `tiro` - Bytes sent, or -1 on error
+**Soo-celinta:** `tiro` - Bytes-ka la diray, ama -1 haddii uu qalad dhaco
 
 ---
 
 ### soo_hel(size)
 
-Receive data from socket.
+Ka hel xog socket-ka.
 
 ```tus
 keyd:eray data = socket.soo_hel(1024);
-qor("Received: ");
+qor("La helay: ");
 qor(data);
 ```
 
-**Parameters:**
-- `size` (tiro) - Maximum bytes to receive
+**Halbeegyada:**
+- `size` (tiro) - Bytes-ka ugu badan ee la helayo
 
-**Returns:** `eray` - Received data
+**Soo-celinta:** `eray` - Xogta la helay
 
 ---
 
 ### xir()
 
-Close the socket.
+Xir socket-ka.
 
 ```tus
 socket.xir();
@@ -136,17 +136,17 @@ socket.xir();
 
 ### waa_ansax()
 
-Check if socket is valid.
+Hubi haddii socket-ku yahay mid ansax ah.
 
 ```tus
 haddii (socket.waa_ansax()) {
-    qor("Socket is open");
+    qor("Socket-ku waa furan yahay");
 }
 ```
 
-**Returns:** `miyaa` - haa if valid, maya otherwise
+**Soo-celinta:** `miyaa` - haa haddii uu ansax yahay, maya haddii kale
 
-## Server Example
+## Tusaale Server
 
 ```tus
 keen "xiriiriye";
@@ -155,25 +155,25 @@ keyd:Xiriiriye server = Xiriiriye() cusub;
 keyd:eray handle = server.samee_server("9999");
 
 haddii (handle == "") {
-    qor("Server creation failed!");
-    socket.xir();
+    qor("Abuurista server-ka waa fashilantay!");
+    server.xir();
 }
 
 server.dhageyso(5);
-qor("Waiting for client...");
+qor("Sugaya macmiil...");
 
 keyd:eray client = server.aqbal();
 haddii (client == "") {
-    qor("No client connected");
+    qor("Macmiil ma xiriirsana");
 } haddii_kale {
-    qor("Client connected!");
-    server.dir("Welcome to server!");
+    qor("Macmiil waa soo xiriiray!");
+    server.dir("Ku soo dhowow server-ka!");
 }
 
 server.xir();
 ```
 
-## Client Example
+## Tusaale Macmiil (Client)
 
 ```tus
 keen "xiriiriye";
@@ -182,14 +182,14 @@ keyd:Xiriiriye client = Xiriiriye() cusub;
 keyd:eray handle = client.kuxirmo("example.com", "80");
 
 haddii (handle == "") {
-    qor("Connection failed!");
+    qor("Xiriirku waa fashilmay!");
     client.xir();
 }
 
-// Send HTTP request
+// Dir codsi HTTP ah
 client.dir("GET / HTTP/1.1\r\nHost: example.com\r\n\r\n");
 
-// Receive response
+// Hel jawaabta
 keyd:eray response = client.soo_hel(4096);
 qor(response);
 

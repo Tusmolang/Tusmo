@@ -1,92 +1,109 @@
-# Functions
+# Hawlaha (Functions)
 
-Tusmo supports functions with two syntax styles.
+Tusmo waxay taageertaa hawlaha leh laba qaab oo syntax ah.
 
-## Function Syntax
+## Syntax-ka Hawsha
 
-Tusmo supports two function syntax styles:
+Tusmo waxay taageertaa laba qaab oo syntax-ka hawsha ah:
 
-### Colon Style (void return)
+### Qaabka semi colon-ka (:) (soo-celin waxbo ah)
 
 ```tus
-hawl greet(name: eray) : waxbo {
-    qor("Hello " + name);
+hawl salaam(magac: eray) : waxbo {
+    qor("Hello " + magac);
 }
 ```
 
-### Arrow Style (with return)
+### Qaabka semi colon-ka (:) (leh soo-celin)
 
 ```tus
-shaqo add(a: tiro, b: tiro) => tiro {
+shaqo isku_dar(a: tiro, b: tiro) : tiro {
     soo_celi a + b;
 }
 ```
 
-### Return Values
-
-Use `soo_celi` to return:
+### Qaabka Arrow-ga (=>) (soo-celin waxbo ah)
 
 ```tus
-hawl divide(a: jajab, b: jajab) => jajab {
+hawl salaam(magac: eray) => waxbo {
+    qor("Hello " + magac);
+}
+```
+
+### Qaabka Arrow-ga (=>) (leh soo-celin)
+
+```tus
+shaqo isku_dar(a: tiro, b: tiro) => tiro {
+    soo_celi a + b;
+}
+```
+
+#### FG: Tusmo waxay taggeertaa sidoo kale labo keyword ku waas oo lagu declare-gareeyo functions-ka kuwaa oo kala ah ```hawl``` ama ```shaqo```
+
+### Qiimayaasha la soo celiyo
+
+U isticmaal `soo_celi` si aad u soo celiso qiimo:
+
+```tus
+hawl qaybi(a: jajab, b: jajab) => jajab {
     soo_celi a / b;
 }
 
-hawl getMessage() : eray {
-    soo_celi "This is a message";
+hawl helFariin() : eray {
+    soo_celi "Tani waa fariin";
 }
 ```
 
-### Parameters with Default Values
+### Halbeegyada leh Qiimaha caadiga ah (Default Values)
 
 ```tus
-hawl greetDefault(name: eray, prefix: eray = "Mr.") : waxbo {
-    qor("Hello " + prefix + " " + name);
+hawl salaamCaadi ah(magac: eray, horgale: eray = "Mr.") : waxbo {
+    qor("Hello " + horgale + " " + magac);
 }
 ```
 
-### No Parameters
+### Aan lahayn Halbeegyo
 
 ```tus
-hawl sayHello() : waxbo {
-    qor("Just saying Hello!");
+hawl dhehHello() : waxbo {
+    qor("Kaliya waxaan leeyahay Hello!");
 }
 ```
 
-### Return Boolean
+### Soo-celinta Boolean
 
 ```tus
-hawl isEven(n: tiro) : miyaa {
-    keyd:miyaa res = (n % 2) == 0;
-    soo_celi res;
+hawl waaDhowr(n: tiro) : miyaa {
+    keyd:miyaa natiijo = (n % 2) == 0;
+    soo_celi natiijo;
 }
 ```
 
-### Array Parameters
+### Halbeegyada Tixda
 
 ```tus
-hawl sumArray(arr: tix:tiro) : tiro {
-    keyd:tiro total = 0;
-    soco item kasta laga helo arr {
-        total = total + item;
+hawl isku_darTix(arr: tix:tiro) : tiro {
+    keyd:tiro wadarta = 0;
+    soco xubin kasta laga helo arr {
+        wadarta = wadarta + xubin;
     }
-    soo_celi total;
+    soo_celi wadarta;
 }
 ```
 
-### Function Keywords
+### Keyword-yada Hawsha
 
-| Keyword | Description |
+| Keyword | Sharaxaad |
 |---------|-------------|
-| `hawl` | Function declaration (colon style) |
-| `shaqo` | Function declaration (arrow style) |
-| `soo_celi` | Return value |
-| `: waxbo` | Void return type |
-| `=> <type>` | Return type (arrow style) |
+| `hawl` ama `shaqo` | Qeexista function |
+| `soo_celi` | Soo-celinta qiimaha |
+| `: waxbo` ama => `waxbo` | Nooca soo-celinta waxbo (void) |
+| `=> <nooca>` ama `: <nooca>` | Nooca soo-celinta (qaabka falaarta) |
 
-### Calling Functions
+### Wacidda Hawlaha
 
 ```tus
-greet("Tusmo");
-keyd:tiro result = add(5, 3);
-qor(divide(10.0, 4.0));
+salaam("Tusmo");
+keyd:tiro natiijo = isku_dar(5, 3);
+qor(qaybi(10.0, 4.0));
 ```

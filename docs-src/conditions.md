@@ -1,64 +1,64 @@
-# Conditions
+# Xaaladaha (Conditions)
 
-Tusmo uses Somali keywords for conditional statements.
+Tusmo waxay u isticmaashaa keyword-yo Soomaali ah weedhaha shuruudda leh.
 
-## If Statement
+## Weedha Haddii (If Statement)
 
 ```tus
 haddii (x > 5) {
-    qor("x is greater than 5");
+    qor("x wuxuu ka weyn yahay 5");
 }
 ```
 
-## If-Else
+## Haddii-Haddii_kale (If-Else)
 
 ```tus
 haddii (x < 5) {
-    qor("x is less than 5");
+    qor("x wuxuu ka yar yahay 5");
 } haddii_kale {
-    qor("x is NOT less than 5");
+    qor("x kama yara 5");
 }
 ```
 
-## If-Elif-Else
+## Haddii - Ama_haddii - Haddii_kale (If-Elif-Else)
 
 ```tus
 haddii (x == 5) {
-    qor("x equals 5");
+    qor("x wuxuu la mid yahay 5");
 } ama_haddii (x == 10) {
-    qor("x equals 10");
+    qor("x wuxuu la mid yahay 10");
 } ama_haddii (x == 15) {
-    qor("x equals 15");
+    qor("x wuxuu la mid yahay 15");
 } haddii_kale {
-    qor("x is something else");
+    qor("x waa wax kale");
 }
 ```
 
-## Nested Conditions
+## Xaaladaha Isku-dhex-jirta
 
 ```tus
 haddii (x > 5) {
     qor("x > 5");
     haddii (y > 15) {
-        qor("y > 15 too");
+        qor("y isna wuxuu ka weyn yahay 15");
     }
 }
 ```
 
-## Comparison Operators
+## Hawl-wadeennada Isbarbardhigga (Comparison Operators)
 
-| Operator | Description |
+| Hawl-wadeen | Sharaxaad |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | La mid ah |
+| `!=` | Aan la mid ahayn |
+| `<` | Ka yar |
+| `>` | Ka weyn |
+| `<=` | Ka yar ama la mid ah |
+| `>=` | Ka weyn ama la mid ah |
 
-## Boolean Operators
+## Hawl-wadeennada Boolean (Boolean Operators)
 
-| Operator | Keyword | Description |
+| Hawl-wadeen | Keyword | Sharaxaad |
 |----------|---------|-------------|
 | `&&` | `iyo` | And |
 | `||` | `ama` | Or |
@@ -67,12 +67,12 @@ haddii (x > 5) {
 keyd:miyaa boolA = haa;
 keyd:miyaa boolB = maya;
 
-qor(boolA iyo boolB);  // And
-qor(boolA ama boolB);    // Or
+qor(boolA iyo boolB);  // Iyo (And)
+qor(boolA ama boolB);    // Ama (Or)
 ```
 
 ## Ternary Operator
 
 ```tus
-keyd:miyaa big = x > y ? haa : maya;
+keyd:miyaa weyn = x > y ? haa : maya;
 ```

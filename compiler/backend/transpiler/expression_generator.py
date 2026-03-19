@@ -326,7 +326,10 @@ class ExpressionGenerator:
         return f'{c_function_name}({", ".join(c_args)})'
 
     def _ensure_string_operand(self, expr_code, expr_type):
+        
         expr_type_str = str(expr_type)
+        print(expr_type_str)
+
         if expr_type_str == 'eray':
             return expr_code
         if expr_type_str == 'xaraf':
@@ -340,6 +343,7 @@ class ExpressionGenerator:
             return f'tusmo_str_format("%f", {expr_code})'
         if expr_type_str == 'miyaa':
             return f"(({expr_code}) ? \"run\" : \"been\")"
+        
         raise Cilad("F-string expressions must evaluate to 'eray', 'xaraf', 'tiro', 'jajab', or 'miyaa'.")
 
     def _generate_function_call(self, node: FunctionCallNode):

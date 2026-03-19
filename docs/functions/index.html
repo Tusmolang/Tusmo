@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A Somali programming language that compiles to C">
+        <meta name="description" content="Luqad barnaamijka Soomaaliga ah oo loo turjumo C">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Functions - Tusmo</title>
+        <title>Hawlaha (Functions) - Tusmo</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#functions" class="md-skip">
+        <a href="#hawlaha-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Functions
+              Hawlaha (Functions)
             
           </span>
         </div>
@@ -255,7 +255,7 @@
   <span class="md-ellipsis">
     
   
-    Tusmo Documentation
+    Hoyga
   
 
     
@@ -282,7 +282,7 @@
   <span class="md-ellipsis">
     
   
-    Arrays
+    Tixyada
   
 
     
@@ -309,7 +309,7 @@
   <span class="md-ellipsis">
     
   
-    Classes
+    Kooxaha (Classes)
   
 
     
@@ -336,7 +336,7 @@
   <span class="md-ellipsis">
     
   
-    Conditions
+    Xaaladaha (Conditions)
   
 
     
@@ -363,7 +363,7 @@
   <span class="md-ellipsis">
     
   
-    Dictionaries
+    Qaamuusyada (Dictionaries)
   
 
     
@@ -399,7 +399,7 @@
   <span class="md-ellipsis">
     
   
-    Functions
+    Hawlaha (Functions)
   
 
     
@@ -417,7 +417,7 @@
   <span class="md-ellipsis">
     
   
-    Functions
+    Hawlaha (Functions)
   
 
     
@@ -443,22 +443,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function-syntax" class="md-nav__link">
+  <a href="#syntax-ka-hawsha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Function Syntax
+        Syntax-ka Hawsha
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Function Syntax">
+    <nav class="md-nav" aria-label="Syntax-ka Hawsha">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#colon-style-void-return" class="md-nav__link">
+  <a href="#qaabka-semi-colon-ka-soo-celin-waxbo-ah" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Colon Style (void return)
+        Qaabka semi colon-ka (:) (soo-celin waxbo ah)
       
     </span>
   </a>
@@ -466,10 +466,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#arrow-style-with-return" class="md-nav__link">
+  <a href="#qaabka-semi-colon-ka-leh-soo-celin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Arrow Style (with return)
+        Qaabka semi colon-ka (:) (leh soo-celin)
       
     </span>
   </a>
@@ -477,10 +477,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#return-values" class="md-nav__link">
+  <a href="#qaabka-arrow-ga-soo-celin-waxbo-ah" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Return Values
+        Qaabka Arrow-ga (=&gt;) (soo-celin waxbo ah)
       
     </span>
   </a>
@@ -488,10 +488,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parameters-with-default-values" class="md-nav__link">
+  <a href="#qaabka-arrow-ga-leh-soo-celin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parameters with Default Values
+        Qaabka Arrow-ga (=&gt;) (leh soo-celin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qaabka Arrow-ga (=&gt;) (leh soo-celin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fg-tusmo-waxay-taggeertaa-sidoo-kale-labo-keyword-ku-waas-oo-lagu-declare-gareeyo-functions-ka-kuwaa-oo-kala-ah-hawl-ama-shaqo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FG: Tusmo waxay taggeertaa sidoo kale labo keyword ku waas oo lagu declare-gareeyo functions-ka kuwaa oo kala ah hawl ama shaqo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qiimayaasha-la-soo-celiyo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qiimayaasha la soo celiyo
       
     </span>
   </a>
@@ -499,10 +527,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#no-parameters" class="md-nav__link">
+  <a href="#halbeegyada-leh-qiimaha-caadiga-ah-default-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        No Parameters
+        Halbeegyada leh Qiimaha caadiga ah (Default Values)
       
     </span>
   </a>
@@ -510,10 +538,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#return-boolean" class="md-nav__link">
+  <a href="#aan-lahayn-halbeegyo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Return Boolean
+        Aan lahayn Halbeegyo
       
     </span>
   </a>
@@ -521,10 +549,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#array-parameters" class="md-nav__link">
+  <a href="#soo-celinta-boolean" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Array Parameters
+        Soo-celinta Boolean
       
     </span>
   </a>
@@ -532,10 +560,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-keywords" class="md-nav__link">
+  <a href="#halbeegyada-tixda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Function Keywords
+        Halbeegyada Tixda
       
     </span>
   </a>
@@ -543,10 +571,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#calling-functions" class="md-nav__link">
+  <a href="#keyword-yada-hawsha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Calling Functions
+        Keyword-yada Hawsha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wacidda-hawlaha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wacidda Hawlaha
       
     </span>
   </a>
@@ -580,7 +619,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Bilaabista
   
 
     
@@ -607,7 +646,7 @@
   <span class="md-ellipsis">
     
   
-    How Tusmo Works
+    Sida Tusmo u Shaqeyso
   
 
     
@@ -634,7 +673,7 @@
   <span class="md-ellipsis">
     
   
-    Loops
+    Wareegyada (Loops)
   
 
     
@@ -661,7 +700,7 @@
   <span class="md-ellipsis">
     
   
-    Operators
+    Hawl-wadeennada (Operators)
   
 
     
@@ -688,7 +727,7 @@
   <span class="md-ellipsis">
     
   
-    HTTP Module
+    Module-ka HTTP
   
 
     
@@ -715,7 +754,7 @@
   <span class="md-ellipsis">
     
   
-    Nasiib Module
+    Module-ka Nasiib (Random)
   
 
     
@@ -742,7 +781,7 @@
   <span class="md-ellipsis">
     
   
-    OS Module
+    Module-ka OS
   
 
     
@@ -769,7 +808,7 @@
   <span class="md-ellipsis">
     
   
-    Wakhti Module
+    Module-ka Wakhti
   
 
     
@@ -796,7 +835,7 @@
   <span class="md-ellipsis">
     
   
-    WebXiriiriye Module
+    Module-ka WebXiriiriye
   
 
     
@@ -823,7 +862,7 @@
   <span class="md-ellipsis">
     
   
-    Xiriiriye Module
+    Module-ka Xiriiriye
   
 
     
@@ -850,7 +889,7 @@
   <span class="md-ellipsis">
     
   
-    Standard Library
+    Maktabadda Caadiga ah (Standard Library)
   
 
     
@@ -877,7 +916,7 @@
   <span class="md-ellipsis">
     
   
-    Strings
+    Erayada (Strings)
   
 
     
@@ -904,7 +943,7 @@
   <span class="md-ellipsis">
     
   
-    Variables
+    Varaibles
   
 
     
@@ -944,22 +983,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function-syntax" class="md-nav__link">
+  <a href="#syntax-ka-hawsha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Function Syntax
+        Syntax-ka Hawsha
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Function Syntax">
+    <nav class="md-nav" aria-label="Syntax-ka Hawsha">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#colon-style-void-return" class="md-nav__link">
+  <a href="#qaabka-semi-colon-ka-soo-celin-waxbo-ah" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Colon Style (void return)
+        Qaabka semi colon-ka (:) (soo-celin waxbo ah)
       
     </span>
   </a>
@@ -967,10 +1006,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#arrow-style-with-return" class="md-nav__link">
+  <a href="#qaabka-semi-colon-ka-leh-soo-celin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Arrow Style (with return)
+        Qaabka semi colon-ka (:) (leh soo-celin)
       
     </span>
   </a>
@@ -978,10 +1017,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#return-values" class="md-nav__link">
+  <a href="#qaabka-arrow-ga-soo-celin-waxbo-ah" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Return Values
+        Qaabka Arrow-ga (=&gt;) (soo-celin waxbo ah)
       
     </span>
   </a>
@@ -989,10 +1028,38 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parameters-with-default-values" class="md-nav__link">
+  <a href="#qaabka-arrow-ga-leh-soo-celin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parameters with Default Values
+        Qaabka Arrow-ga (=&gt;) (leh soo-celin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qaabka Arrow-ga (=&gt;) (leh soo-celin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fg-tusmo-waxay-taggeertaa-sidoo-kale-labo-keyword-ku-waas-oo-lagu-declare-gareeyo-functions-ka-kuwaa-oo-kala-ah-hawl-ama-shaqo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FG: Tusmo waxay taggeertaa sidoo kale labo keyword ku waas oo lagu declare-gareeyo functions-ka kuwaa oo kala ah hawl ama shaqo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qiimayaasha-la-soo-celiyo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qiimayaasha la soo celiyo
       
     </span>
   </a>
@@ -1000,10 +1067,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#no-parameters" class="md-nav__link">
+  <a href="#halbeegyada-leh-qiimaha-caadiga-ah-default-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        No Parameters
+        Halbeegyada leh Qiimaha caadiga ah (Default Values)
       
     </span>
   </a>
@@ -1011,10 +1078,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#return-boolean" class="md-nav__link">
+  <a href="#aan-lahayn-halbeegyo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Return Boolean
+        Aan lahayn Halbeegyo
       
     </span>
   </a>
@@ -1022,10 +1089,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#array-parameters" class="md-nav__link">
+  <a href="#soo-celinta-boolean" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Array Parameters
+        Soo-celinta Boolean
       
     </span>
   </a>
@@ -1033,10 +1100,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-keywords" class="md-nav__link">
+  <a href="#halbeegyada-tixda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Function Keywords
+        Halbeegyada Tixda
       
     </span>
   </a>
@@ -1044,10 +1111,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#calling-functions" class="md-nav__link">
+  <a href="#keyword-yada-hawsha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Calling Functions
+        Keyword-yada Hawsha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wacidda-hawlaha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wacidda Hawlaha
       
     </span>
   </a>
@@ -1079,97 +1157,106 @@
   
 
 
-<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
-<p>Tusmo supports functions with two syntax styles.</p>
-<h2 id="function-syntax">Function Syntax<a class="headerlink" href="#function-syntax" title="Permanent link">&para;</a></h2>
-<p>Tusmo supports two function syntax styles:</p>
-<h3 id="colon-style-void-return">Colon Style (void return)<a class="headerlink" href="#colon-style-void-return" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">greet</span><span class="o">(</span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">waxbo</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="err">qor(&quot;Hello</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">name)</span><span class="p">;</span>
+<h1 id="hawlaha-functions">Hawlaha (Functions)<a class="headerlink" href="#hawlaha-functions" title="Permanent link">&para;</a></h1>
+<p>Tusmo waxay taageertaa hawlaha leh laba qaab oo syntax ah.</p>
+<h2 id="syntax-ka-hawsha">Syntax-ka Hawsha<a class="headerlink" href="#syntax-ka-hawsha" title="Permanent link">&para;</a></h2>
+<p>Tusmo waxay taageertaa laba qaab oo syntax-ka hawsha ah:</p>
+<h3 id="qaabka-semi-colon-ka-soo-celin-waxbo-ah">Qaabka semi colon-ka (:) (soo-celin waxbo ah)<a class="headerlink" href="#qaabka-semi-colon-ka-soo-celin-waxbo-ah" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">salaam</span><span class="o">(</span><span class="nt">magac</span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">waxbo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">qor(&quot;Hello</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">magac)</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<h3 id="arrow-style-with-return">Arrow Style (with return)<a class="headerlink" href="#arrow-style-with-return" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nt">shaqo</span><span class="w"> </span><span class="nt">add</span><span class="o">(</span><span class="nt">a</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">,</span><span class="w"> </span><span class="nt">b</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nt">tiro</span><span class="w"> </span><span class="p">{</span>
+<h3 id="qaabka-semi-colon-ka-leh-soo-celin">Qaabka semi colon-ka (:) (leh soo-celin)<a class="headerlink" href="#qaabka-semi-colon-ka-leh-soo-celin" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">shaqo</span><span class="w"> </span><span class="nt">isku_dar</span><span class="o">(</span><span class="nt">a</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">,</span><span class="w"> </span><span class="nt">b</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="err">soo_celi</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">b</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<h3 id="return-values">Return Values<a class="headerlink" href="#return-values" title="Permanent link">&para;</a></h3>
-<p>Use <code>soo_celi</code> to return:</p>
-<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">divide</span><span class="o">(</span><span class="nt">a</span><span class="o">:</span><span class="w"> </span><span class="nt">jajab</span><span class="o">,</span><span class="w"> </span><span class="nt">b</span><span class="o">:</span><span class="w"> </span><span class="nt">jajab</span><span class="o">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nt">jajab</span><span class="w"> </span><span class="p">{</span>
+<h3 id="qaabka-arrow-ga-soo-celin-waxbo-ah">Qaabka Arrow-ga (=&gt;) (soo-celin waxbo ah)<a class="headerlink" href="#qaabka-arrow-ga-soo-celin-waxbo-ah" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">salaam</span><span class="o">(</span><span class="nt">magac</span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="o">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nt">waxbo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">qor(&quot;Hello</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">magac)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="qaabka-arrow-ga-leh-soo-celin">Qaabka Arrow-ga (=&gt;) (leh soo-celin)<a class="headerlink" href="#qaabka-arrow-ga-leh-soo-celin" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">shaqo</span><span class="w"> </span><span class="nt">isku_dar</span><span class="o">(</span><span class="nt">a</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">,</span><span class="w"> </span><span class="nt">b</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nt">tiro</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">soo_celi</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="fg-tusmo-waxay-taggeertaa-sidoo-kale-labo-keyword-ku-waas-oo-lagu-declare-gareeyo-functions-ka-kuwaa-oo-kala-ah-hawl-ama-shaqo">FG: Tusmo waxay taggeertaa sidoo kale labo keyword ku waas oo lagu declare-gareeyo functions-ka kuwaa oo kala ah <code>hawl</code> ama <code>shaqo</code><a class="headerlink" href="#fg-tusmo-waxay-taggeertaa-sidoo-kale-labo-keyword-ku-waas-oo-lagu-declare-gareeyo-functions-ka-kuwaa-oo-kala-ah-hawl-ama-shaqo" title="Permanent link">&para;</a></h4>
+<h3 id="qiimayaasha-la-soo-celiyo">Qiimayaasha la soo celiyo<a class="headerlink" href="#qiimayaasha-la-soo-celiyo" title="Permanent link">&para;</a></h3>
+<p>U isticmaal <code>soo_celi</code> si aad u soo celiso qiimo:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">qaybi</span><span class="o">(</span><span class="nt">a</span><span class="o">:</span><span class="w"> </span><span class="nt">jajab</span><span class="o">,</span><span class="w"> </span><span class="nt">b</span><span class="o">:</span><span class="w"> </span><span class="nt">jajab</span><span class="o">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nt">jajab</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="err">soo_celi</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="err">b</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="nt">hawl</span><span class="w"> </span><span class="nt">getMessage</span><span class="o">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="err">soo_celi</span><span class="w"> </span><span class="err">&quot;This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">message&quot;</span><span class="p">;</span>
+<span class="nt">hawl</span><span class="w"> </span><span class="nt">helFariin</span><span class="o">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">soo_celi</span><span class="w"> </span><span class="err">&quot;Tani</span><span class="w"> </span><span class="err">waa</span><span class="w"> </span><span class="err">fariin&quot;</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<h3 id="parameters-with-default-values">Parameters with Default Values<a class="headerlink" href="#parameters-with-default-values" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">greetDefault</span><span class="o">(</span><span class="nt">name</span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="o">,</span><span class="w"> </span><span class="nt">prefix</span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mr.&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">waxbo</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="err">qor(&quot;Hello</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">prefix</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">name)</span><span class="p">;</span>
+<h3 id="halbeegyada-leh-qiimaha-caadiga-ah-default-values">Halbeegyada leh Qiimaha caadiga ah (Default Values)<a class="headerlink" href="#halbeegyada-leh-qiimaha-caadiga-ah-default-values" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">salaamCaadi</span><span class="w"> </span><span class="nt">ah</span><span class="o">(</span><span class="nt">magac</span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="o">,</span><span class="w"> </span><span class="nt">horgale</span><span class="o">:</span><span class="w"> </span><span class="nt">eray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Mr.&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">waxbo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">qor(&quot;Hello</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">horgale</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">&quot;</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">magac)</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<h3 id="no-parameters">No Parameters<a class="headerlink" href="#no-parameters" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code>hawl sayHello() : waxbo {
-    qor(&quot;Just saying Hello!&quot;);
+<h3 id="aan-lahayn-halbeegyo">Aan lahayn Halbeegyo<a class="headerlink" href="#aan-lahayn-halbeegyo" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>hawl dhehHello() : waxbo {
+    qor(&quot;Kaliya waxaan leeyahay Hello!&quot;);
 }
 </code></pre></div>
 
-<h3 id="return-boolean">Return Boolean<a class="headerlink" href="#return-boolean" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">isEven</span><span class="o">(</span><span class="nt">n</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">miyaa</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">keyd</span><span class="p">:</span><span class="n">miyaa</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="err">soo_celi</span><span class="w"> </span><span class="err">res</span><span class="p">;</span>
+<h3 id="soo-celinta-boolean">Soo-celinta Boolean<a class="headerlink" href="#soo-celinta-boolean" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">waaDhowr</span><span class="o">(</span><span class="nt">n</span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">miyaa</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">keyd</span><span class="p">:</span><span class="n">miyaa</span><span class="w"> </span><span class="n">natiijo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="err">soo_celi</span><span class="w"> </span><span class="err">natiijo</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<h3 id="array-parameters">Array Parameters<a class="headerlink" href="#array-parameters" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">sumArray</span><span class="o">(</span><span class="nt">arr</span><span class="o">:</span><span class="w"> </span><span class="nt">tix</span><span class="p">:</span><span class="nd">tiro</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">keyd</span><span class="p">:</span><span class="n">tiro</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="err">soco</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">kasta</span><span class="w"> </span><span class="err">laga</span><span class="w"> </span><span class="err">helo</span><span class="w"> </span><span class="err">arr</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="err">total</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">total</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">item</span><span class="p">;</span>
+<h3 id="halbeegyada-tixda">Halbeegyada Tixda<a class="headerlink" href="#halbeegyada-tixda" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">hawl</span><span class="w"> </span><span class="nt">isku_darTix</span><span class="o">(</span><span class="nt">arr</span><span class="o">:</span><span class="w"> </span><span class="nt">tix</span><span class="p">:</span><span class="nd">tiro</span><span class="o">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">tiro</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">keyd</span><span class="p">:</span><span class="n">tiro</span><span class="w"> </span><span class="n">wadarta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="err">soco</span><span class="w"> </span><span class="err">xubin</span><span class="w"> </span><span class="err">kasta</span><span class="w"> </span><span class="err">laga</span><span class="w"> </span><span class="err">helo</span><span class="w"> </span><span class="err">arr</span><span class="w"> </span><span class="err">{</span>
+<span class="w">        </span><span class="err">wadarta</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">wadarta</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">xubin</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nt">soo_celi</span><span class="w"> </span><span class="nt">total</span><span class="o">;</span>
+<span class="w">    </span><span class="nt">soo_celi</span><span class="w"> </span><span class="nt">wadarta</span><span class="o">;</span>
 <span class="err">}</span>
 </code></pre></div>
 
-<h3 id="function-keywords">Function Keywords<a class="headerlink" href="#function-keywords" title="Permanent link">&para;</a></h3>
+<h3 id="keyword-yada-hawsha">Keyword-yada Hawsha<a class="headerlink" href="#keyword-yada-hawsha" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Keyword</th>
-<th>Description</th>
+<th>Sharaxaad</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>hawl</code></td>
-<td>Function declaration (colon style)</td>
-</tr>
-<tr>
-<td><code>shaqo</code></td>
-<td>Function declaration (arrow style)</td>
+<td><code>hawl</code> ama <code>shaqo</code></td>
+<td>Qeexista function</td>
 </tr>
 <tr>
 <td><code>soo_celi</code></td>
-<td>Return value</td>
+<td>Soo-celinta qiimaha</td>
 </tr>
 <tr>
-<td><code>: waxbo</code></td>
-<td>Void return type</td>
+<td><code>: waxbo</code> ama =&gt; <code>waxbo</code></td>
+<td>Nooca soo-celinta waxbo (void)</td>
 </tr>
 <tr>
-<td><code>=&gt; &lt;type&gt;</code></td>
-<td>Return type (arrow style)</td>
+<td><code>=&gt; &lt;nooca&gt;</code> ama <code>: &lt;nooca&gt;</code></td>
+<td>Nooca soo-celinta (qaabka falaarta)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="calling-functions">Calling Functions<a class="headerlink" href="#calling-functions" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="nt">greet</span><span class="o">(</span><span class="s2">&quot;Tusmo&quot;</span><span class="o">);</span>
-<span class="nt">keyd</span><span class="p">:</span><span class="nd">tiro</span><span class="w"> </span><span class="nt">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">add</span><span class="o">(</span><span class="nt">5</span><span class="o">,</span><span class="w"> </span><span class="nt">3</span><span class="o">);</span>
-<span class="nt">qor</span><span class="o">(</span><span class="nt">divide</span><span class="o">(</span><span class="nt">10</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span><span class="w"> </span><span class="nt">4</span><span class="p">.</span><span class="nc">0</span><span class="o">));</span>
+<h3 id="wacidda-hawlaha">Wacidda Hawlaha<a class="headerlink" href="#wacidda-hawlaha" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="nt">salaam</span><span class="o">(</span><span class="s2">&quot;Tusmo&quot;</span><span class="o">);</span>
+<span class="nt">keyd</span><span class="p">:</span><span class="nd">tiro</span><span class="w"> </span><span class="nt">natiijo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">isku_dar</span><span class="o">(</span><span class="nt">5</span><span class="o">,</span><span class="w"> </span><span class="nt">3</span><span class="o">);</span>
+<span class="nt">qor</span><span class="o">(</span><span class="nt">qaybi</span><span class="o">(</span><span class="nt">10</span><span class="p">.</span><span class="nc">0</span><span class="o">,</span><span class="w"> </span><span class="nt">4</span><span class="p">.</span><span class="nc">0</span><span class="o">));</span>
 </code></pre></div>
 
 

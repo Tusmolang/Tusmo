@@ -1,81 +1,81 @@
-# Nasiib Module
+# Module-ka Nasiib (Random)
 
-The Nasiib module provides random number generation.
+Module-ka Nasiib wuxuu bixiyaa soo saarista lambarrada nasiibka ah (random).
 
-## Import
+## Soo-dejinta (Import)
 
 ```tus
 keen "nasiib";
 ```
 
-Initialize before use (optional - automatic):
+Bilaabi ka hor isticmaalka (ikhtiyaari - otomaatig ayay u dhacdaa):
 
 ```tus
-nasiib.bilaab_nasiib();
+bilaab_nasiib();
 ```
 
-## Functions
+## Hawlaha (Functions)
 
 ### bilaab_nasiib()
 
-Initialize the random number generator. Call once before using other functions.
+Wac mar qura bilaab_nasiib() ka hor inta aanad isticmaalin hawlaha kale si loo bilaabo.
 
 ```tus
-nasiib.bilaab_nasiib();
+bilaab_nasiib();
 ```
 
-**Returns:** `waxbo`
+**Soo-celinta:** `waxbo`
 
 ---
 
-### nasiib_tiro(min, max)
+### nasiib_tiro(ugu_yaraan, ugu_badnaan)
 
-Generate random integer between min and max (inclusive).
+Soo saar integer(tiro) nasiib ah oo u dhexeeya ugu yaraan iyo ugu badnaan (oo ay ku jiraan).
 
 ```tus
-keyd:tiro num = nasiib.tiro(1, 100);
-qor("Random: ");
+keyd:tiro num = nasiib_tiro(1, 100);
+qor("Nasiib: ");
 qor(num);  // 1-100
 ```
 
-**Parameters:**
-- `ugu_yaraan` (tiro) - Minimum value
-- `ugu_badnaan` (tiro) - Maximum value
+**Halbeegyada:**
+- `ugu_yaraan` (tiro) - Qiimaha ugu yar
+- `ugu_badnaan` (tiro) - Qiimaha ugu weyn
 
-**Returns:** `tiro` - Random integer
+**Soo-celinta:** `tiro` - Integer nasiib ah
 
 ---
 
-### nasiib_jajab(min, max)
+### nasiib_jajab(ugu_yaraan, ugu_badnaan)
 
-Generate random float between min and max.
+Soo saar float nasiib ah oo u dhexeeya ugu yaraan iyo ugu badnaan.
 
 ```tus
-keyd:jajab num = nasiib.jajab(0.0, 1.0);
-qor("Random float: ");
-qor(num);  // e.g., 0.456789
+keyd:jajab num = nasiib_jajab(0.0, 1.0);
+qor("Jajab nasiib ah: ");
+qor(num);  // tusaale, 0.456789
 ```
 
-**Parameters:**
-- `ugu_yaraan` (jajab) - Minimum value
-- `ugu_badnaan` (jajab) - Maximum value
+**Halbeegyada:**
+- `ugu_yaraan` (jajab) - Qiimaha ugu yar
+- `ugu_badnaan` (jajab) - Qiimaha ugu weyn
 
-**Returns:** `jajab` - Random float
+**Soo-celinta:** `jajab` - Float nasiib ah
 
-## Example
+## Tusaale
 
 ```tus
 keen "nasiib";
 
-nasiib.bilaab_nasiib();
+bilaab_nasiib();
 
-// Random integer 1-10
-keyd:tiro num1 = nasiib.tiro(1, 10);
-qor("Dice roll: ");
+// Integer nasiib ah 1-10
+keyd:tiro num1 = nasiib_tiro(1, 10);
+qor("Lulidda laadhka: ");
 qor(num1);
 
-// Random float 0-1
-keyd:jajab num2 = nasiib.jajab(0.0, 1.0);
-qor("Random float: ");
+// Jajab nasiib ah 0-1
+keyd:jajab num2 = nasiib_jajab(0.0, 1.0);
+qor("Jajab nasiib ah: ");
 qor(num2);
 ```

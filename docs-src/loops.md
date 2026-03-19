@@ -1,8 +1,8 @@
-# Loops
+# Wareegyada (Loops)
 
-Tusmo supports multiple loop types.
+Tusmo waxay taageertaa dhowr nooc oo loop (wareegyo) ah.
 
-## While Loop
+## Wareegga Inta ay (While Loop)
 
 ```tus
 keyd:tiro i = 0;
@@ -12,7 +12,7 @@ inta ay (i < 5) {
 }
 ```
 
-## Do-While Loop
+## Wareegga Samee-Inta ay (Do-While Loop)
 
 ```tus
 keyd:tiro j = 0;
@@ -22,7 +22,7 @@ samay {
 } inta ay (j < 5);
 ```
 
-## For Range Loop
+## Wareegga Soco ee Range-ka (For Range Loop)
 
 ```tus
 soco k laga bilaabo 0 .. 5 {
@@ -30,16 +30,16 @@ soco k laga bilaabo 0 .. 5 {
 }
 ```
 
-## For-Each Loop
+## Wareegga Soco Mid kasta (For-Each Loop)
 
 ```tus
 keyd:tix:eray arr = ["aa", "bb", "cc"];
-soco item kasta laga helo arr {
-    qor("For Each: " + item);
+soco xubin kasta laga helo arr {
+    qor("For Each: " + xubin);
 }
 ```
 
-## Break
+## Jooji (Break)
 
 ```tus
 keyd:tiro n = 0;
@@ -48,22 +48,22 @@ inta ay (n < 10) {
     haddii (n == 5) {
         joog;
     }
-    qor("Break test: " + n);
+    qor("Tijaabada Break: " + n);
 }
 ```
 
-## Continue
+## Kasoco (Continue)
 
 ```tus
 soco m laga bilaabo 0 .. 5 {
     haddii (m == 2) {
         kasoco;
     }
-    qor("Continue test: " + m);
+    qor("Tijaabada Continue: " + m);
 }
 ```
 
-## Nested Loops
+## Wareegyada Is-dhex-jira
 
 ```tus
 keyd:tiro outer = 0;
@@ -73,22 +73,22 @@ inta ay (outer < 3) {
         haddii (outer == 1 iyo inner == 1) {
             joog;
         }
-        qor($"Outer: {outer}, Inner: {inner}");
+        qor($"Bannaanka: {outer}, Gudaha: {inner}");
         inner = inner + 1;
     }
     outer = outer + 1;
 }
 ```
 
-## Loop Keywords Summary
+## Soo-koobidda Keyword-yada Wareegga
 
-| Keyword | Description |
+| Keyword | Sharaxaad |
 |---------|-------------|
-| `inta ay ...` | While condition |
+| `inta ay ...` | Shuruudda While |
 | `samay ...` | Do-while |
 | `soco ...` | For/foreach |
 | `joog` | Break |
 | `kasoco` | Continue |
-| `laga bilaabo` | Range start |
-| `..` | Range |
-| `kasta laga helo` | For each iteration |
+| `laga bilaabo` | Bilowga range-ka |
+| `..` | Range-ka |
+| `kasta laga helo` | Wareeg kasta (iteration) |

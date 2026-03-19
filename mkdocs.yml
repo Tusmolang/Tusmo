@@ -1,5 +1,6 @@
 site_name: Tusmo
-site_description: A Somali programming language that compiles to C
+docs_dir: docs-src
+site_description: Luqad barnaamijka Soomaaliga ah oo loo turjumo C
 site_url: https://tusmolang.github.io/Tusmo/
 
 repo_url: https://github.com/Tusmolang/Tusmo

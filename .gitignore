@@ -13,3 +13,5 @@ tijaabo/
 *.out
 *.txt
 parsetab.py
+tusmo_lib_index.json
+update-docs.sh

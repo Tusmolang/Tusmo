@@ -1,6 +1,6 @@
-# Getting Started
+# Bilaabista
 
-## Installation
+## Rakibidda (Installation)
 
 ### Linux/macOS
 
@@ -13,96 +13,110 @@ curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | b
 ```powershell
 irm https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.ps1 | iex
 ```
+## Talo Muhiim ah
+Markaad la soo dagto tusmo waa inaad isticmaasho ***VScode*** si aad u hesho **syntax highlighter** iyo **hover documentation** kuwaaso si automatic ah kugu soo dagi doono xiliga installation-ka haddii vscode uu kugu jiray horey.
 
-## Your First Program
+## Barnaamijkaagii ugu Horreeyay
 
-Create `hello.tus`:
+Sameey `hello.tus`:
 
 ```tus
-qor("Hello, Somaliland!");
+qor("Hello, Soomali Developers!");
 ```
 
-## Running Tusmo
+## Sida loo run loo dhaho Tusmo
 
-Simply pass the `.tus` file to the tusmo command:
+Kaliya u gudbi faylka `.tus` amarka tusmo:
 
 ```bash
 tusmo hello.tus
 ```
 
-## Usage
+## Isticmaalka (Usage)
 
 ```
-tusmo <file.tus> [options]
+tusmo <fayl.tus> [doorashooyin]
 
-Options:
-  --c           Keep the generated C code file
-  -h, --help    Show help
-  -v, --version Show version
-  -l, --libraries List supported libraries
-  update        Update Tusmo to latest version
-  install <lib> Install a library
+Doorashooyinka (Options):
+  --c           Hayso faylka code-ka C ee la sameeyay
+  -h, --help    Kutusinaysa cawimaad (help)
+  -v, --version Kutusinaysa version-ka aad haysato iyo in uu jiro version cusub
+  -l, --libraries Liiska maktabadaha (libraries) ee la taageero
+  update        Cusboonaysiinta Tusmo oo soo dajinaysa version-kii ugu dambeeyay
+  install <lib> soo dajinta (install) maktabadaha (library)
 ```
 
-## How It Works
+## Sida ay u Shaqeyso
 
 ```
 hello.tus  →  tusmo (parser)  →  hello.c  →  zig cc  →  hello (binary)  →  ./hello
-              ↓
+                       ↓  
+              ↓      iyadoo la isticmaalayo python
          AST → semantic analysis → C code generation
               ↓
-         runtime/*.c + stdlib/*.tus → linked
+         runtime/*.c + stdlib/*.tus → la xiriiriyay (linked)
 ```
 
-### Compilation Pipeline
+### Pipeline-ka Turjumidda (Compilation Pipeline)
 
-1. **Lexing** - Tokenize Tusmo source code
-2. **Parsing** - Build AST (Abstract Syntax Tree)
-3. **Semantic Analysis** - Type checking, symbol resolution
-4. **Code Generation** - Generate C code from AST
-5. **Compilation** - Zig compiles C to binary executable
-6. **Execution** - Run the binary
+1. **Lexing** - Token-ka laga soosaraya code-ka Tusmo
+2. **Parsing** - Dhis AST (Abstract Syntax Tree)
+3. **Semantic Analysis** - Hubinta nooca (type checking), xallinta astaanta (symbol resolution)
+4. **Code Generation** - Samee code-ka C iyadoo la isticmaalayo AST
+5. **Compilation** - Zig wuxuu u beddelaa C-code-ka binary la fulin karo
+6. **Execution** - Run-kareynta binary-ga
 
-The bundled release includes:
-- **Zig compiler** - Compiles C to binary
-- **Boehm GC** - Garbage collector (prebuilt)
-- **Runtime library** - String, array, dictionary support
-- **Standard library** - OS, HTTP, sockets, etc.
+Siidaynta (release) la socota waxaa ku jira:
+- **Zig compiler** - Wuxuu C u beddelaa binary
+- **Boehm GC** - Qashin-ururiye (Garbage collector) (horay loo dhisay)
+- **Runtime library** - Taageerada erayga (string), tixda (array), qaamuuska (dictionary)
+- **Standard library** - OS, HTTP, sockets, iwm.
 
-You do NOT need to install GCC or libgc manually.
+Uma baahnid inaad soo dagsato GCC ama libgc gacantaada.
 
-### Keep C Code
+### Hayso Code-ka C (Keep C Code)
 
-Use `--c` flag to keep the generated C file:
+U isticmaal calanka (flag) `--c` si aad u haysato faylka C ee la sameeyay:
 
 ```bash
 tusmo hello.tus --c
 ```
 
-This produces `hello.c` in the same directory.
+Tani waxay soo saaraysaa `hello.c` isla directory-ga dhexdiisa.
 
-## Code Example
+## Tusaale Code
 
 ```tus
-// My first Tusmo program
+// Barnaamijkaygii ugu horreeyay ee Tusmo
 keyd:eray magac = "Tusmo";
-keyd:tiro da = 5;
+keyd:tiro da'da = 5;
 
 qor($"Hello, {magac}!");
-qor($"Age: {da}");
+qor($"Da'da: {da'da}");
 ```
 
-Output:
+Natiijada (Output):
 ```
 Hello, Tusmo!
-Age: 5
+Da'da: 5
 ```
 
-## Requirements
+## Shuruudaha (Requirements)
 
-None! The bundled release includes everything needed:
+Haddii aad ula soo dageyso luqadan adigoo umaraayo install.sh ama install.ps1 uma baahnid:
 - Zig compiler
 - Boehm GC
-- Runtime libraries
+- Maktabadaha Runtime (Runtime libraries)
 
-Just download and run.
+Kaliya soo dagso luuqada adigoo u maraayo 
+### Windows / MacOs
+```bash
+curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | bash
+```
+
+### Windows
+
+```powershell
+irm https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.ps1 | iex
+```
+kadib horey ugal qorista code-ka tusmo 

@@ -1,46 +1,46 @@
-# Arrays
+# Tixyada
 
-Arrays in Tusmo use `tix:<type>` syntax.
+Tixyada Tusmo waxay isticmaalaan syntax-ka `tix:<nooca>`.
 
-## Declaration
+## Sheegista
 
 ```tus
-keyd:tix:tiro nums = [1, 2, 3, 4, 5];
-keyd:tix:eray words = ["foo", "bar", "baz"];
-keyd:tix:jajab floats = [1.1, 2.2, 3.3];
-keyd:tix:miyaa flags = [haa, maya, haa];
-keyd:tix:tiro empty = [];
+keyd:tix:tiro tirooyin = [1, 2, 3, 4, 5];
+keyd:tix:eray erayo = ["foo", "bar", "baz"];
+keyd:tix:jajab jajabyo = [1.1, 2.2, 3.3];
+keyd:tix:miyaa calamo = [haa, maya, haa];
+keyd:tix:tiro eber = [];
 ```
 
-## Access Elements
+## Helidda Xubnaha
 
 ```tus
-qor(nums[0]);  // First element
-qor(nums[2]);  // Third element
+qor(tirooyin[0]);  // Xubinta koowaad
+qor(tirooyin[2]);  // Xubinta saddexaad
 ```
 
-## Modify Elements
+## Beddelidda Xubnaha
 
 ```tus
-keyd:tix:tiro arr = [10, 20, 30];
-arr[0] = 100;
+keyd:tix:tiro tix_ = [10, 20, 30];
+tix_[0] = 100;
 ```
 
-## Array Length
+## Dhererka Tixda
 
 ```tus
-qor(dherer(nums));
+qor(dherer(tirooyin));
 ```
 
-## Iterate with For-Each
+## Ku Soco (For-Each)
 
 ```tus
-soco item kasta laga helo nums {
-    qor(item);
+soco xubin kasta laga helo tirooyin {
+    qor(xubin);
 }
 ```
 
-## 2D Arrays
+## Tixyada 2D
 
 ```tus
 keyd:tix:tix:tiro matrix = [[1, 2], [3, 4], [5, 6]];
@@ -52,10 +52,10 @@ keyd:tix:tix:eray stringMatrix = [["a", "b"], ["c", "d"]];
 qor(stringMatrix[0][0]);  // "a"
 ```
 
-## Arrays with Expressions
+## Tixyada leh Weedho (Expressions)
 
 ```tus
-keyd:tiro val1 = 1;
-keyd:tiro val2 = 2;
-keyd:tix:tiro exprArr = [val1 + val2, val1 * val2, val2 - val1];
+keyd:tiro qiimo1 = 1;
+keyd:tiro qiimo2 = 2;
+keyd:tix:tiro exprArr = [qiimo1 + qiimo2, qiimo1 * qiimo2, qiimo2 - qiimo1];
 ```

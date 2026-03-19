@@ -1,36 +1,36 @@
-# Classes
+# Kooxaha (Classes)
 
-Tusmo supports object-oriented programming with classes using the `koox` keyword.
+Tusmo waxay taageertaa barnaamijka ku salaysan waxa af-ka qalaad lagu yiraahdo oop (object-oriented programming) iyadoo la isticmaalayo keyword-ka `koox`.
 
-## Class Definition
+## Qeexidda Kooxda (Class Definition)
 
 ```tus
 koox Qof {
-    keyd:eray name;
-    keyd:tiro age;
+    keyd:eray magac;
+    keyd:tiro da'da;
     
     dhis(n: eray) : waxbo {
-        kan.name = n;
-        kan.age = 0;
+        kan.magac = n;
+        kan.da'da = 0;
     }
     
     hawl soo_dhah() : waxbo {
-        qor("Name: " + kan.name);
+        qor("Magaca: " + kan.magac);
     }
     
     hawl setAge(a: tiro) : waxbo {
-        kan.age = a;
+        kan.da'da = a;
     }
     
     hawl getAge() : tiro {
-        soo_celi kan.age;
+        soo_celi kan.da'da;
     }
 }
 ```
 
-## Create Instance
+## Sameynta Instance
 
-Use `cusub` keyword to create a new instance:
+U isticmaal keyword-ka `cusub` si aad u sameyso instance cusub:
 
 ```tus
 keyd:Qof p1 = Qof("Ali") cusub;
@@ -41,28 +41,28 @@ qor(p1.getAge());
 
 ## Constructor
 
-The `dhis` method acts as the constructor:
+Habka `dhis` wuxuu u shaqeeyaa sidii constructor:
 
 ```tus
 dhis(n: eray) : waxbo {
-    kan.name = n;
-    kan.age = 0;
+    kan.magac = n;
+    kan.da'da = 0;
 }
 ```
 
-## Self Reference
+## Tixraaca Nafsiyi (Self Reference)
 
-Use `kan` to refer to the current instance:
+U isticmaal `kan` si aad u tixraacdo instance-ka hadda jooga:
 
 ```tus
-kan.name = n;
-kan.age = a;
-soo_celi kan.age;
+kan.magac = n;
+kan.da'da = a;
+soo_celi kan.da'da;
 ```
 
-## Inheritance
+## Dhaxalka (Inheritance)
 
-Use `dhaxlaya` keyword for inheritance:
+U isticmaal keyword-ka `dhaxlaya` si aad u dhaxasho koox kale:
 
 ```tus
 koox Baabuur {
@@ -94,61 +94,61 @@ koox Toyota dhaxlaya Baabuur {
 }
 ```
 
-Use `waalid` to reference the parent class:
+U isticmaal `waalid` si aad u tixraacdo kooxda waalidka ah (parent class):
 
 ```tus
-waalid.socoshada();  // Call parent method
+waalid.socoshada();  // Wac habka waalidka
 ```
 
-## Complete Example
+## Tusaale Dhammaystiran
 
 ```tus
-koox Player {
-    keyd:eray name;
-    keyd:miyaa alive;
-    keyd:tiro score;
+koox Ciyaaryahan {
+    keyd:eray magac;
+    keyd:miyaa nolol;
+    keyd:tiro dhibco;
     
     dhis(n: eray) : waxbo {
-        kan.name = n;
-        kan.alive = haa;
-        kan.score = 0;
+        kan.magac = n;
+        kan.nolol = haa;
+        kan.dhibco = 0;
     }
     
-    hawl hit() : waxbo {
-        kan.alive = maya;
+    hawl ku_dhac() : waxbo {
+        kan.nolol = maya;
     }
     
-    hawl addScore(points: tiro) : waxbo {
-        kan.score = kan.score + points;
+    hawl ku_dar_dhibco(dhibco: tiro) : waxbo {
+        kan.dhibco = kan.dhibco + dhibco;
     }
     
-    hawl isAlive() : miyaa {
-        soo_celi kan.alive;
+    hawl ma_nool_yahay() : miyaa {
+        soo_celi kan.nolol;
     }
     
-    hawl getScore() : tiro {
-        soo_celi kan.score;
+    hawl hel_dhibco() : tiro {
+        soo_celi kan.dhibco;
     }
 }
 
-keyd:Player player = Player("Hero") cusub;
-qor(player.name);
-qor(" is alive: ");
-qor(player.isAlive());
-player.hit();
-player.addScore(100);
-qor("Score: ");
-qor(player.getScore());
+keyd:Ciyaaryahan ciyaaryahan = Ciyaaryahan("Halyeey") cusub;
+qor(ciyaaryahan.magac);
+qor(" ma nool yahay: ");
+qor(ciyaaryahan.ma_nool_yahay());
+ciyaaryahan.ku_dhac();
+ciyaaryahan.ku_dar_dhibco(100);
+qor("Dhibcaha: ");
+qor(ciyaaryahan.hel_dhibco());
 ```
 
-## Class Keywords
+## Keyword-yada Kooxda
 
-| Keyword | Description |
+| Keyword | Sharaxaad |
 |---------|-------------|
-| `koox` | Class declaration |
-| `dhaxlaya` | Inheritance keyword |
-| `waalid` | Parent class reference |
-| `cusub` | Create new instance |
-| `kan` | Self reference |
-| `dhis` | Constructor |
-| `hawl` | Method declaration |
+| `koox` | Sheegista kooxda |
+| `dhaxlaya` | Keyword-ka dhaxalka |
+| `waalid` | Tixraaca kooxda waalidka |
+| `cusub` | Sameynta instance cusub |
+| `kan` | Tixraaca naftiisa |
+| `dhis` | Constructor ama dhise |
+| `hawl / shaqo` | Sheegista habka (method) |

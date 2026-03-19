@@ -1,8 +1,8 @@
-# Strings
+# Erayada (Strings)
 
-Strings in Tusmo use the `eray` type.
+Erayada (Strings) gudaha Tusmo waxay isticmaalaan nooca `eray`.
 
-## Declaration
+## Sheegista
 
 ```tus
 keyd:eray str1 = "Hello";
@@ -10,52 +10,52 @@ keyd:eray str2;
 keyd:eray str3 = "";
 ```
 
-## Concatenation
+## Isku-dhafka (Concatenation)
 
 ```tus
 keyd:eray str = "Hello" + " " + "World";
 ```
 
-## String Functions
+## Hawlaha Erayada (String Functions)
 
-### Length
+### Dhererka (Length)
 
 ```tus
-qor(dherer(str1));  // Get string length
+qor(dherer(str1));  // Hel dhererka erayga
 ```
 
-### Indexing
+### Tilmaamidda (Indexing)
 
 ```tus
-qor(str1[0]);  // First character
-qor(str1[1]);  // Second character
+qor(str1[0]);  // Xarafka koowaad
+qor(str1[1]);  // Xarafka labaad
 ```
 
 ## F-Strings
 
-Use `$"{}"` for interpolation:
+U isticmaal `$"{}"` isku-dhafka:
 
 ```tus
-keyd:eray fruit = "Apple";
-qor($"I like {fruit}");
-qor($"Math: 5 * 3 = {5 * 3}");
+keyd:eray midho = "Tufaax";
+qor($"Waan jeclahay {midho}");
+qor($"Xisaab: 5 * 3 = {5 * 3}");
 ```
 
-Multi-line strings:
+Erayada safafka badan:
 
 ```tus
-keyd:eray multiline = $"This is a
-multi-line
-string";
+keyd:eray safar = $"Kani waa 
+safar
+badan";
 ```
 
-## Comparison
+## Isbarbardhigga (Comparison)
 
 ```tus
 keyd:eray a = "abc";
 keyd:eray b = "abc";
 keyd:eray c = "def";
 
-qor(a == b);  // haa (yes)
-qor(a == c);  // maya (no)
+qor(a == b);  // haa
+qor(a == c);  // maya
 ```
