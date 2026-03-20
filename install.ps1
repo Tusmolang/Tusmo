@@ -22,9 +22,9 @@ if (Get-Command code -ErrorAction SilentlyContinue) {
   $vsixPath = "$temp\$vsix"
   try {
     Invoke-WebRequest -Uri "https://github.com/$repo/releases/latest/download/$vsix" -OutFile $vsixPath -ErrorAction Stop
-    # Remove old IDs (both old/new publishers)
-    code --uninstall-extension TusmoLang-org.tusmo-language-support *> $null
-    code --uninstall-extension tusmo-official.tusmo-language-support *> $null
+    # Remove old IDs (both old/new publishers, casing variants)
+    $ids = @("tusmolang-org.tusmo-language-support","TusmoLang-org.tusmo-language-support","tusmo-official.tusmo-language-support")
+    foreach ($id in $ids) { code --uninstall-extension $id *> $null }
     code --install-extension $vsixPath --force | Out-Null
   } catch {}
 }

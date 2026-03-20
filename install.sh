@@ -25,15 +25,19 @@ tar -xzf "$TMP/$ASSET" -C "$TUSMO_HOME"
 
 # Optional: install VS Code extension if VSIX asset exists and 'code' is available
 VSIX="tusmo-vscode.vsix"
+EXT_IDS=("tusmolang-org.tusmo-language-support" "TusmoLang-org.tusmo-language-support" "tusmo-official.tusmo-language-support")
 if command -v code >/dev/null 2>&1 || command -v codium >/dev/null 2>&1; then
   echo "Waxaa la soo dejinnaa VS Code extension..."
-  # Uninstall any old IDs (old publisher + new publisher)
   CODE_BIN=$(command -v code || command -v codium)
-  "$CODE_BIN" --uninstall-extension TusmoLang-org.tusmo-language-support >/dev/null 2>&1 || true
-  "$CODE_BIN" --uninstall-extension tusmo-official.tusmo-language-support >/dev/null 2>&1 || true
+  for eid in "${EXT_IDS[@]}"; do
+    "$CODE_BIN" --uninstall-extension "$eid" >/dev/null 2>&1 || true
+  done
   if curl -fsSL "https://github.com/$REPO/releases/latest/download/$VSIX" -o "$TMP/$VSIX"; then
     "$CODE_BIN" --install-extension "$TMP/$VSIX" --force >/dev/null 2>&1 || true
   fi
+else
+  # Haddii code/codium aanu jirin, tirtir galalka extension-ka hore
+  rm -rf "$HOME/.vscode/extensions"/tusmo*-language-support-* 2>/dev/null || true
 fi
 rm -rf "$TMP"
 
