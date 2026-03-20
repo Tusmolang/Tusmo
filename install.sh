@@ -27,8 +27,11 @@ tar -xzf "$TMP/$ASSET" -C "$TUSMO_HOME"
 VSIX="tusmo-vscode.vsix"
 if command -v code >/dev/null 2>&1 || command -v codium >/dev/null 2>&1; then
   echo "Waxaa la soo dejinnaa VS Code extension..."
+  # Uninstall any old IDs (old publisher + new publisher)
+  CODE_BIN=$(command -v code || command -v codium)
+  "$CODE_BIN" --uninstall-extension TusmoLang-org.tusmo-language-support >/dev/null 2>&1 || true
+  "$CODE_BIN" --uninstall-extension tusmo-official.tusmo-language-support >/dev/null 2>&1 || true
   if curl -fsSL "https://github.com/$REPO/releases/latest/download/$VSIX" -o "$TMP/$VSIX"; then
-    CODE_BIN=$(command -v code || command -v codium)
     "$CODE_BIN" --install-extension "$TMP/$VSIX" --force >/dev/null 2>&1 || true
   fi
 fi
