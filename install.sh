@@ -32,6 +32,8 @@ if command -v code >/dev/null 2>&1 || command -v codium >/dev/null 2>&1; then
   for eid in "${EXT_IDS[@]}"; do
     "$CODE_BIN" --uninstall-extension "$eid" >/dev/null 2>&1 || true
   done
+  # Sidoo kale tirtir galalka haday harsan yihiin
+  rm -rf "$HOME/.vscode/extensions"/tusmo*-language-support-* 2>/dev/null || true
   if curl -fsSL "https://github.com/$REPO/releases/latest/download/$VSIX" -o "$TMP/$VSIX"; then
     "$CODE_BIN" --install-extension "$TMP/$VSIX" --force >/dev/null 2>&1 || true
   fi
