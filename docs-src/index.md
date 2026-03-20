@@ -10,7 +10,7 @@ Ku soo dhowow Tusmo, luqad barnaamijka Soomaaliga ah!
 
 ```bash
 # Install
-curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.sh | bash
 
 # Run
 tusmo hello.tus

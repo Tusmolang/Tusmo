@@ -10,7 +10,7 @@ Tusmo is a statically-typed programming language that compiles to C, then to a b
 
 ```bash
 # Install Tusmo
-curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.sh | bash
 
 # Run a Tusmo program
 tusmo hello.tus

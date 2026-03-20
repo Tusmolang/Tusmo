@@ -21,7 +21,7 @@ from compiler.midend.docstring_utils import (
 )
 
 LOCAL_VERSION = "0.0.35"
-REPO_URL = "https://api.github.com/repos/Tusmolang/Tusmo/releases/latest"
+REPO_URL = "https://api.github.com/repos/TusmoLang-org/Tusmo/releases/latest"
 
 def help(command=None):
     if command in ["-h", "--help", "-c", "--caawimaad"]:
@@ -88,12 +88,12 @@ def update_tusmo(command=None):
             # Linux and MacOS share very similar command structures
             if os_type == "Linux" or os_type == "Darwin":
                 print("Tusmo waxay isku dayaysaa inay is casriyeyso (Unix)...")
-                cmd = "sudo rm -rf ~/.tusmo /usr/local/bin/tusmo 2>/dev/null && curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | bash"
+                cmd = "sudo rm -rf ~/.tusmo /usr/local/bin/tusmo 2>/dev/null && curl -fsSL https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.sh | bash"
                 subprocess.run(cmd, shell=True, check=True)
             
             elif os_type == "Windows":
                 print("Tusmo waxay isku dayaysaa inay is casriyeyso (Windows)...")
-                cmd = "irm https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.ps1 | iex"
+                cmd = "irm https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.ps1 | iex"
                 subprocess.run(["powershell", "-Command", cmd], check=True)
             
             print("\nTusmo waa la cusboonaysiiyay!")

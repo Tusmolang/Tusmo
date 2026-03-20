@@ -5,13 +5,13 @@
 ### Linux/macOS
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.sh | bash
 ```
 
 ### Windows
 
 ```powershell
-irm https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.ps1 | iex
 ```
 
 ## Your First Program

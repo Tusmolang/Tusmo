@@ -26,10 +26,10 @@ nav:
       - WebXiriiriye: stdlib-webxiriiriye.md
       - HTTP: stdlib-http.md
 
-repo_url: https://github.com/Tusmolang/Tusmo
+repo_url: https://github.com/TusmoLang-org/Tusmo
 
-repo_url: https://github.com/Tusmolang/Tusmo
-repo_name: Tusmolang/Tusmo
+repo_url: https://github.com/TusmoLang-org/Tusmo
+repo_name: TusmoLang-org/Tusmo
 
 theme:
   name: material

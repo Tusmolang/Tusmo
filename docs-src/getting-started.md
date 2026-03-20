@@ -5,13 +5,13 @@
 ### Linux/macOS
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.sh | bash
 ```
 
 ### Windows
 
 ```powershell
-irm https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.ps1 | iex
 ```
 ## Talo Muhiim ah
 Markaad la soo dagto tusmo waa inaad isticmaasho ***VScode*** si aad u hesho **syntax highlighter** iyo **hover documentation** kuwaaso si automatic ah kugu soo dagi doono xiliga installation-ka haddii vscode uu kugu jiray horey.
@@ -111,12 +111,12 @@ Haddii aad ula soo dageyso luqadan adigoo umaraayo install.sh ama install.ps1 um
 Kaliya soo dagso luuqada adigoo u maraayo 
 ### Windows / MacOs
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.sh | bash
 ```
 
 ### Windows
 
 ```powershell
-irm https://raw.githubusercontent.com/Tusmolang/Tusmo/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/TusmoLang-org/Tusmo/main/install.ps1 | iex
 ```
 kadib horey ugal qorista code-ka tusmo 
