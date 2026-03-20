@@ -50,6 +50,7 @@ update / cusboonaysiin / casriye    Tusmo waxay isku dayaysaa inay is casriyeyso
 
 def check_for_updates():
     import requests
+    import json
     try:
         # Si loo yareeyo in la xannibo
         headers = {'User-Agent': 'Tusmo-Update-Checker'}
@@ -123,20 +124,40 @@ def download_libraries(all_args):
     else:
         library_name, version = raw_name, None
 
-    # Repo resolution: allow owner/repo, otherwise default owner
-    default_owner = "tusmo-libs"
-    if "/" in library_name:
-        owner, repo = library_name.split("/", 1)
-    else:
-        owner, repo = default_owner, library_name
+    # --- Akhri kataloogga rasmiga ah: TusmoLang-org/index ---
+    catalog_url = "https://raw.githubusercontent.com/TusmoLang-org/index/main/catalog.json"
+    try:
+        cat_resp = requests.get(catalog_url, timeout=10)
+        cat_resp.raise_for_status()
+        catalog = cat_resp.json().get("packages", [])
+    except Exception:
+        print("❌ Ma awoodin in aan akhriyo kataloogga rasmiga ah (TusmoLang-org/index).")
+        return
 
-    repo_url = f"https://github.com/{owner}/{repo}"
+    pkg = next((p for p in catalog if p.get("name") == library_name), None)
+    if not pkg:
+        print(f"❌ Maktabadda '{library_name}' lagama helin kataloogga rasmiga ah.")
+        return
+
+    repo_url = pkg.get("repo")
+    available_versions = pkg.get("versions", [])
+    if version:
+        if version not in available_versions:
+            print(f"❌ Nooca '{version}' lagama helin '{library_name}'. Noocyada jira: {', '.join(available_versions)}")
+            return
+        chosen_version = version
+    else:
+        chosen_version = pkg.get("latest") or (available_versions[0] if available_versions else None)
+        if not chosen_version:
+            print(f"❌ '{library_name}' lagama helin nooc sax ah.")
+            return
+
+    repo = repo_url.rstrip("/").split("/")[-1]
     target_dir = os.path.abspath(os.path.join(os.getcwd(), ".lib", repo))
     os.makedirs(os.path.dirname(target_dir), exist_ok=True)
 
     print(f"\n[Tusmo] Waxaa la soo dejinayaa '{repo}' ... "
-          f"{'(nooca ugu dambeeya)' if not version else f'nooca {version}'} "
-          f"ka socda {repo_url}")
+          f"nooca {chosen_version} ka socda {repo_url}")
 
     # Prefer git if available
     if shutil.which("git"):
@@ -144,8 +165,8 @@ def download_libraries(all_args):
             if os.path.exists(target_dir):
                 shutil.rmtree(target_dir)
             clone_cmd = ["git", "clone", "--depth", "1"]
-            if version:
-                clone_cmd += ["--branch", version]
+            if chosen_version:
+                clone_cmd += ["--branch", chosen_version]
             clone_cmd += [repo_url, target_dir]
             subprocess.run(clone_cmd, check=True, capture_output=True)
             print("Waxaa lagu rakibay git gudaha .lib/")
@@ -154,8 +175,8 @@ def download_libraries(all_args):
             print(f"Git clone wuu fashilmay: {e}. Waxaa la isku dayayaa ZIP.")
 
     # Fallback: download ZIP (tag if specified, else main)
-    if version:
-        zip_url = f"{repo_url}/archive/refs/tags/{version}.zip"
+    if chosen_version:
+        zip_url = f"{repo_url}/archive/refs/tags/{chosen_version}.zip"
     else:
         zip_url = f"{repo_url}/archive/refs/heads/main.zip"
 
