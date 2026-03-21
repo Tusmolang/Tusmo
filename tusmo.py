@@ -49,7 +49,8 @@ update / cusboonaysiin / casriye    Tusmo waxay isku dayaysaa inay is casriyeyso
         sys.exit(0)
 
 def check_for_updates():
-    import requests
+    import urllib.request
+    import urllib.error
     import json
     try:
         # Si loo yareeyo in la xannibo
@@ -125,6 +126,16 @@ def download_libraries(all_args):
         library_name, version = raw_name, None
 
     # --- Akhri kataloogga rasmiga ah: TusmoLang-org/index ---
+    def fetch_catalog(url):
+        try:
+            with urllib.request.urlopen(url, timeout=10) as resp:
+                if resp.status != 200:
+                    return None
+                data = resp.read().decode("utf-8")
+                return json.loads(data).get("packages", [])
+        except Exception:
+            return None
+
     catalog_candidates = [
         os.environ.get("TUSMO_CATALOG_URL"),
         "https://raw.githubusercontent.com/TusmoLang-org/index/main/catalog.json",
@@ -133,13 +144,9 @@ def download_libraries(all_args):
 
     catalog = []
     for catalog_url in [c for c in catalog_candidates if c]:
-        try:
-            cat_resp = requests.get(catalog_url, timeout=10)
-            cat_resp.raise_for_status()
-            catalog = cat_resp.json().get("packages", [])
+        catalog = fetch_catalog(catalog_url)
+        if catalog:
             break
-        except Exception:
-            continue
 
     if not catalog:
         print(
