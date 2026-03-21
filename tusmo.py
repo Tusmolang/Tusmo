@@ -20,7 +20,7 @@ from compiler.midend.docstring_utils import (
     attach_docstrings,
 )
 
-LOCAL_VERSION = "0.0.45"
+LOCAL_VERSION = "0.0.46"
 REPO_URL = "https://api.github.com/repos/TusmoLang-org/Tusmo/releases/latest"
 
 def help(command=None):
@@ -138,8 +138,8 @@ def download_libraries(all_args):
 
     catalog_candidates = [
         os.environ.get("TUSMO_CATALOG_URL"),
-        "https://raw.githubusercontent.com/TusmoLang-org/index/main/catalog.json",
         "https://raw.githubusercontent.com/TusmoLang-org/index/main/TusmoLang-org/catalog.json",
+        "https://raw.githubusercontent.com/TusmoLang-org/index/main/catalog.json",
     ]
 
     catalog = []
