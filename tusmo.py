@@ -23,7 +23,7 @@ from compiler.midend.docstring_utils import (
     attach_docstrings,
 )
 
-LOCAL_VERSION = "0.0.48"
+LOCAL_VERSION = "0.0.49"
 REPO_URL = "https://api.github.com/repos/TusmoLang-org/Tusmo/releases/latest"
 
 def help(command=None):
@@ -112,6 +112,9 @@ def download_libraries(all_args):
     import shutil
     import zipfile
     import tempfile
+    import urllib.request
+    import urllib.error
+    import json
 
     if len(all_args) != 3:
         return False
@@ -182,22 +185,7 @@ def download_libraries(all_args):
     print(f"\n[Tusmo] Waxaa la soo dejinayaa '{repo}' ... "
           f"nooca {chosen_version} ka socda {repo_url}")
 
-    # Prefer git if available
-    if shutil.which("git"):
-        try:
-            if os.path.exists(target_dir):
-                shutil.rmtree(target_dir)
-            clone_cmd = ["git", "clone", "--depth", "1"]
-            if chosen_version:
-                clone_cmd += ["--branch", chosen_version]
-            clone_cmd += [repo_url, target_dir]
-            subprocess.run(clone_cmd, check=True, capture_output=True)
-            print("Waxaa lagu rakibay git gudaha .lib/")
-            return True
-        except subprocess.CalledProcessError as e:
-            print(f"Git clone wuu fashilmay: {e}. Waxaa la isku dayayaa ZIP.")
-
-    # Fallback: download ZIP (tag if specified, else main)
+    # Download ZIP (tag if specified, else main) — avoids any auth prompts
     if chosen_version:
         zip_url = f"{repo_url}/archive/refs/tags/{chosen_version}.zip"
     else:
@@ -206,12 +194,12 @@ def download_libraries(all_args):
     try:
         with tempfile.TemporaryDirectory() as tmpdir:
             zip_path = os.path.join(tmpdir, "lib.zip")
-            r = requests.get(zip_url, stream=True, timeout=30)
-            r.raise_for_status()
-            with open(zip_path, "wb") as f:
-                for chunk in r.iter_content(chunk_size=8192):
-                    if chunk:
-                        f.write(chunk)
+            with urllib.request.urlopen(zip_url, timeout=30) as resp:
+                status = getattr(resp, "status", 200)
+                if status not in (200, None):
+                    raise RuntimeError(f"HTTP {status}")
+                with open(zip_path, "wb") as f:
+                    shutil.copyfileobj(resp, f)
 
             with zipfile.ZipFile(zip_path, "r") as zf:
                 zf.extractall(tmpdir)
